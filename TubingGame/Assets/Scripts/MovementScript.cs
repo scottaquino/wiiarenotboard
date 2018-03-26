@@ -23,7 +23,7 @@ public class MovementScript : MonoBehaviour {
 
 	// Use this for initialization
 	void Start () {
-		
+		moveVector.y = -1.1f;
 	}
 	
 	// Update is called once per frame
@@ -38,16 +38,22 @@ public class MovementScript : MonoBehaviour {
 		// whether the input is coming from a joystick, the keyboard, mouse, or a custom controller.
 
 		moveVector.x = player.GetAxis("Horizontal"); // get input by name or action id
-		moveVector.y = player.GetAxis("Vertical"); 
+		moveVector.y = player.GetAxis ("Vertical") * 2.0f;
 	}
 	 
 	void ProcessInput()
 	{
 		// Process movement
 		if(moveVector.x != 0.0f || moveVector.y != 0.0f) {
-			//cc.Move(moveVector * moveSpeed * Time.deltaTime);
-			//transform.Translate(new Vector3(moveVector.x * moveSpeed, moveVector.y * moveSpeed, 0)); 
-			gameObject.GetComponent<Rigidbody2D>().velocity = moveVector * moveSpeed;
+			if(gameObject.GetComponent<Rigidbody2D>().velocity.magnitude >= 7.5f)
+			{
+				gameObject.GetComponent<Rigidbody2D> ().velocity = gameObject.GetComponent<Rigidbody2D> ().velocity.normalized * 7.5f;
+			}
+			if(moveVector.y >= -1.0f)
+			{
+				moveVector.y = 0.2f;
+			}
+			gameObject.GetComponent<Rigidbody2D>().AddForce(moveVector * moveSpeed);
 		} 
 	}  
 }  
