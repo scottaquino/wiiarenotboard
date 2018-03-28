@@ -17,7 +17,7 @@ public class SpawnRiver : MonoBehaviour {
 		
 	}
 
-	IEnumerator Spawn()
+	public IEnumerator Spawn()
 	{
 		yield return new WaitForSeconds (1.0f);
 		while (true) {
