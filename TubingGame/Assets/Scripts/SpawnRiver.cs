@@ -4,26 +4,29 @@ using UnityEngine;
 
 public class SpawnRiver : MonoBehaviour {
 
-	public GameObject riverBank;
-	Vector3 newPos;
+	public List<GameObject> riverBank;
+
+	GameObject newChunk;
+	Vector3 newPos, oldPos;
+
+	int numChunks;
+	float yOffset = 0.0f;
 
 	// Use this for initialization
 	void Start () {
-		StartCoroutine ("Spawn");
+		numChunks = riverBank.Count-1;
 	}
 	
 	// Update is called once per frame
 	void Update () {
 		
 	}
-
-	public IEnumerator Spawn()
-	{
-		yield return new WaitForSeconds (1.0f);
-		while (true) {
-			newPos = new Vector3 (Random.Range (-3.0f, 3.0f), transform.position.y, transform.position.z);
-			Instantiate(riverBank, newPos, Quaternion.identity);
-			yield return new WaitForSeconds (.5f);
-		}
-	}
 }
+
+/*
+ * newChunk = riverBank [Random.Range (0, numChunks)];
+ * yOffset = (oldPos.position.y + newChunk.renderer.bounds.size.y) - (newChunk.transform.position.y / 2) + .75f;
+ * newPos = new Vector3 (0, yOffset, -10);
+ * oldPos = newPos;
+ * Instantiate (newChunk, newPos, Quaternion.identity); 
+ */

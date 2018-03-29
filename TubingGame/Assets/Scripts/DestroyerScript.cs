@@ -27,6 +27,12 @@ public class DestroyerScript : MonoBehaviour {
 		}
 	}
 
+	void OnTriggerExit2D(Collider2D col)
+	{
+		if (col.gameObject.tag == "River")
+			Destroy (col.gameObject);
+	}
+
 	void EndGame()
 	{
 		SceneManager.LoadScene ("YouWin");
