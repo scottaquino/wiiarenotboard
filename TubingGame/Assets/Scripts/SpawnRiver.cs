@@ -23,7 +23,7 @@ public class SpawnRiver : MonoBehaviour {
 		
 	}
 
-	void OnTriggerExit2D(Collider2D col)
+	void OnTriggerEnter2D(Collider2D col)
 	{
 		newChunk = riverBank [Random.Range (0, numChunks)];
 		yOffset = col.gameObject.transform.position.y - newChunk.GetComponent<SpriteRenderer>().bounds.size.y;
