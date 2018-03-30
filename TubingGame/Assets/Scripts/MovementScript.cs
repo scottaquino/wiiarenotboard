@@ -11,6 +11,8 @@ public class MovementScript : MonoBehaviour {
 	public float maxSpeed = 3.0f;
 	public float gravity = 2.0f;
     public float bounce = 15.0f;
+	public float bounceControl = 0.1f;
+	bool bouncing = false;
 
 	private Player player; // The Rewired Player
 	//private CharacterController cc;
@@ -40,8 +42,11 @@ public class MovementScript : MonoBehaviour {
 		// Get the input from the Rewired Player. All controllers that the Player owns will contribute, so it doesn't matter
 		// whether the input is coming from a joystick, the keyboard, mouse, or a custom controller.
 
-		moveVector.y = player.GetAxis ("Vertical") * moveSpeed - gravity;
-		moveVector.x = player.GetAxis("Horizontal") * moveSpeed; // get input by name or action id
+		if(!bouncing)
+		{
+			moveVector.y = player.GetAxis ("Vertical") * moveSpeed - gravity;
+			moveVector.x = player.GetAxis("Horizontal") * moveSpeed; // get input by name or action id
+		}
 	}
 	 
 	void ProcessInput()
@@ -63,17 +68,22 @@ public class MovementScript : MonoBehaviour {
     void OnCollisionEnter2D(Collision2D collision)
     {
         Debug.Log("COLLIDING");
-        StartCoroutine("Bounce");
+		StartCoroutine(Bounce(collision));
     }
 
-    IEnumerator Bounce()
+	IEnumerator Bounce(Collision2D col)
     {
-        for(int i = 0; i < 5; i++)
-        {
-            Debug.Log("BOUNCING");
-            gameObject.GetComponent<Rigidbody2D>().AddForce(-moveVector * bounce * moveSpeed); //bounce math
-            yield return new WaitForSeconds(1.0f);
-        }
+        Debug.Log("BOUNCING");
+        gameObject.GetComponent<Rigidbody2D>().AddForce(-moveVector * bounce/2 * moveSpeed); //bounce math for aggressor
+		col.gameObject.GetComponent<Rigidbody2D>().AddForce(moveVector * bounce * moveSpeed); //bounce math for person getting bumped
+
+		//Take away control of movement during bounce
+		bouncing = true;
+		gameObject.GetComponent<Rigidbody2D> ().velocity = Vector3.zero;
+		moveVector.x = 0.0f;
+		moveVector.y = 0.0f;
+		yield return new WaitForSeconds(bounceControl);
+		bouncing = false;
     }
 
 }  

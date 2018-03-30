@@ -6,16 +6,23 @@ using UnityEngine.SceneManagement;
 public class DestroyerScript : MonoBehaviour {
 
 	public int numPlayers;
+	public float deathTimer;
+	public bool katrina = false;
+	public float stormSpeed;
 	public GameObject manager;
 
 
 	// Use this for initialization
 	void Start () {
+		StartCoroutine (CatchUp());
 	}
 	
 	// Update is called once per frame
 	void Update () {
-		
+		if(katrina)
+		{
+			transform.position = new Vector3 (0.0f, gameObject.transform.position.y - stormSpeed * 0.01f, 0.0f);
+		}
 	}
 
 	void OnTriggerEnter2D(Collider2D col)
@@ -57,5 +64,11 @@ public class DestroyerScript : MonoBehaviour {
 	void EndGame()
 	{
 		SceneManager.LoadScene ("YouWin");
+	}
+
+	IEnumerator CatchUp()
+	{
+		yield return new WaitForSeconds (deathTimer);
+		katrina = true;
 	}
 }
