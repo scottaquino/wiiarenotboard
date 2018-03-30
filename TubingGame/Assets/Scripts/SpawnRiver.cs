@@ -15,18 +15,19 @@ public class SpawnRiver : MonoBehaviour {
 	// Use this for initialization
 	void Start () {
 		numChunks = riverBank.Count-1;
+		oldPos = transform.position;
 	}
 	
 	// Update is called once per frame
 	void Update () {
 		
 	}
-}
 
-/*
- * newChunk = riverBank [Random.Range (0, numChunks)];
- * yOffset = (oldPos.position.y + newChunk.renderer.bounds.size.y) - (newChunk.transform.position.y / 2) + .75f;
- * newPos = new Vector3 (0, yOffset, -10);
- * oldPos = newPos;
- * Instantiate (newChunk, newPos, Quaternion.identity); 
- */
+	void OnTriggerExit2D(Collider2D col)
+	{
+		newChunk = riverBank [Random.Range (0, numChunks)];
+		yOffset = col.gameObject.transform.position.y - newChunk.GetComponent<SpriteRenderer>().bounds.size.y;
+		newPos = new Vector3 (0, yOffset, -10);
+		Instantiate (newChunk, newPos, Quaternion.identity);
+	}
+}
