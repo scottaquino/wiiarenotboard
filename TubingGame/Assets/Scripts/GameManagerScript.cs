@@ -6,6 +6,7 @@ using UnityEngine.UI;
 public class GameManagerScript : MonoBehaviour {
 
 	public int playerCount;
+	GameObject titleManager;
 	public bool player1Win = true, player2Win = true, player3Win = true, player4Win = true;
 	public Image p1, p2, p3, p4;
 	public GameObject player1;
@@ -17,6 +18,8 @@ public class GameManagerScript : MonoBehaviour {
 	// Use this for initialization
 	void Start () {
 		DontDestroyOnLoad (this.gameObject);
+		titleManager = GameObject.Find ("TitleManager");
+		playerCount = titleManager.GetComponent<TitleManagerScript> ().playerCount;
 		if(playerCount == 1)
 		{
 			player1.SetActive (true);

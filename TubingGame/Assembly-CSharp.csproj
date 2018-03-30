@@ -108,7 +108,8 @@
      <Compile Include="Assets\Scripts\GameManagerScript.cs" />
      <Compile Include="Assets\Scripts\MovementScript.cs" />
      <Compile Include="Assets\Scripts\SpawnRiver.cs" />
-     <Compile Include="Assets\WinnerScript.cs" />
+     <Compile Include="Assets\Scripts\TitleManagerScript.cs" />
+     <Compile Include="Assets\Scripts\WinnerScript.cs" />
      <None Include="Assets\Rewired\Extras\TouchControls\Shaders\ColorShift.shader" />
      <None Include="Assets\Rewired\Documentation\licences.txt" />
      <None Include="Assets\Rewired\Documentation\ReadMe.txt" />
