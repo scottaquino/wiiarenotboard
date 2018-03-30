@@ -10,6 +10,7 @@ public class MovementScript : MonoBehaviour {
 	public float moveSpeed = 3.0f;
 	public float maxSpeed = 3.0f;
 	public float gravity = 2.0f;
+    public float bounce = 15.0f;
 
 	private Player player; // The Rewired Player
 	//private CharacterController cc;
@@ -41,8 +42,6 @@ public class MovementScript : MonoBehaviour {
 
 		moveVector.y = player.GetAxis ("Vertical") * moveSpeed - gravity;
 		moveVector.x = player.GetAxis("Horizontal") * moveSpeed; // get input by name or action id
-
-		//gameObject.GetComponent<Rigidbody2D> ().velocity = moveVector;
 	}
 	 
 	void ProcessInput()
@@ -59,6 +58,23 @@ public class MovementScript : MonoBehaviour {
 			}
 			gameObject.GetComponent<Rigidbody2D>().AddForce(moveVector * moveSpeed);
 		} 
-	} 
+	}
+
+    void OnCollisionEnter2D(Collision2D collision)
+    {
+        Debug.Log("COLLIDING");
+        StartCoroutine("Bounce");
+    }
+
+    IEnumerator Bounce()
+    {
+        for(int i = 0; i < 5; i++)
+        {
+            Debug.Log("BOUNCING");
+            gameObject.GetComponent<Rigidbody2D>().AddForce(-moveVector * bounce * moveSpeed); //bounce math
+            yield return new WaitForSeconds(1.0f);
+        }
+    }
+
 }  
  
