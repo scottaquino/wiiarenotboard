@@ -7,7 +7,7 @@ public class CameraControl : MonoBehaviour {
 	public float moveSpeed;
 
 	bool pushed = false;
-	float pushSpeed = 0.0f;
+	float pushSpeed = -2.0f;
 
 	// Use this for initialization
 	void Start () {
@@ -21,9 +21,9 @@ public class CameraControl : MonoBehaviour {
 			transform.position += Vector3.down * -pushSpeed * Time.deltaTime;
 	}
 
-	void OnTriggerStay2D(Collider2D col)
+	void OnTriggerEnter2D(Collider2D col)
 	{
-		if (col.gameObject.tag == "Player") {
+		if (col.gameObject.tag == "Player" && col.gameObject.GetComponent<Rigidbody2D> ().velocity.y <= pushSpeed) {
 			pushed = true;
 			pushSpeed = col.gameObject.GetComponent<Rigidbody2D> ().velocity.y;
 		}
@@ -31,7 +31,9 @@ public class CameraControl : MonoBehaviour {
 
 	void OnTriggerExit2D(Collider2D col)
 	{
-		if (col.gameObject.tag == "Player")
+		if (col.gameObject.tag == "Player") {
 			pushed = false;
+			pushSpeed = -2.0f;
+		}
 	}
 }

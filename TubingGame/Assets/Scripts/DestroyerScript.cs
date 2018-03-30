@@ -6,6 +6,7 @@ using UnityEngine.SceneManagement;
 public class DestroyerScript : MonoBehaviour {
 
 	public int numPlayers;
+	public GameObject manager;
 
 
 	// Use this for initialization
@@ -20,6 +21,26 @@ public class DestroyerScript : MonoBehaviour {
 	void OnTriggerEnter2D(Collider2D col)
 	{
 		if (col.gameObject.tag == "Player" && numPlayers > 1) {
+			if (col.gameObject.GetComponent<MovementScript>().playerId == 0)
+			{
+				manager.GetComponent<GameManagerScript> ().player1Win = false;
+				manager.GetComponent<GameManagerScript> ().p1.gameObject.SetActive (false);
+			}
+			else if (col.gameObject.GetComponent<MovementScript>().playerId == 1)
+			{
+				manager.GetComponent<GameManagerScript> ().player2Win = false;
+				manager.GetComponent<GameManagerScript> ().p2.gameObject.SetActive (false);
+			}
+			else if (col.gameObject.GetComponent<MovementScript>().playerId == 2)
+			{
+				manager.GetComponent<GameManagerScript> ().player3Win = false;
+				manager.GetComponent<GameManagerScript> ().p3.gameObject.SetActive (false);
+			}
+			else if (col.gameObject.GetComponent<MovementScript>().playerId == 3)
+			{
+				manager.GetComponent<GameManagerScript> ().player4Win = false;
+				manager.GetComponent<GameManagerScript> ().p4.gameObject.SetActive (false);
+			}
 			Destroy (col.gameObject);
 			numPlayers--;
 			if (numPlayers == 1)
