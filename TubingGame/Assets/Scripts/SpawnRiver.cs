@@ -29,10 +29,7 @@ public class SpawnRiver : MonoBehaviour {
 		if (col.gameObject.tag == "River") {
 			newChunk = riverBank [Random.Range (0, numChunks)];
 			spriteBounds = newChunk.GetComponent<SpriteRenderer> ().bounds.size.y;
-			if (spriteBounds == 20)
-				yOffset = col.gameObject.transform.position.y - (spriteBounds + 9.2f);
-			else
-				yOffset = col.gameObject.transform.position.y - spriteBounds;
+			yOffset = col.gameObject.transform.position.y - spriteBounds;
 			newPos = new Vector3 (0, yOffset, -10);
 			Instantiate (newChunk, newPos, Quaternion.identity);
 		}
