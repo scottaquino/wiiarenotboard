@@ -52,6 +52,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   playerCount: 4
+  destroyer: {fileID: 0}
   player1Win: 1
   player2Win: 1
   player3Win: 1

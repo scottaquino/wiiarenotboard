@@ -37,8 +37,8 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1970958538321810}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -1.49, y: 0.05, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalPosition: {x: -1.315, y: 0.07, z: 0}
+  m_LocalScale: {x: 0.5032555, y: 0.74564785, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 0
@@ -75,9 +75,9 @@ CircleCollider2D:
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 0, y: 0}
+  m_Offset: {x: -0.030904775, y: 0}
   serializedVersion: 2
-  m_Radius: 0.5
+  m_Radius: 0.9778265
 --- !u!114 &114951353560190738
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -91,7 +91,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   playerId: 0
   moveSpeed: 10
-  maxSpeed: 2
+  maxSpeed: 0.5
   gravity: 2
   bounce: 1.75
   bounceControl: 0.2
@@ -129,7 +129,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: 21300000, guid: 0ba3700792ff0465c8a006dd4b301b42, type: 3}
+  m_Sprite: {fileID: 21300000, guid: fc285138f0a9428489786ec59ddfd170, type: 3}
   m_Color: {r: 0, g: 0.03833678, b: 0.7941176, a: 1}
   m_FlipX: 0
   m_FlipY: 0

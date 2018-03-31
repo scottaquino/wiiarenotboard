@@ -6,6 +6,7 @@ using UnityEngine.UI;
 public class GameManagerScript : MonoBehaviour {
 
 	public int playerCount;
+	public GameObject destroyer;
 	GameObject titleManager;
 	public bool player1Win = true, player2Win = true, player3Win = true, player4Win = true;
 	public Image p1, p2, p3, p4;
@@ -64,6 +65,7 @@ public class GameManagerScript : MonoBehaviour {
 			p3.gameObject.SetActive (true);
 			p4.gameObject.SetActive (true);
 		}
+		destroyer.GetComponent<DestroyerScript> ().numPlayers = playerCount;
 	}
 
 
