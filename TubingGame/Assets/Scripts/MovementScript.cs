@@ -53,9 +53,9 @@ public class MovementScript : MonoBehaviour {
 	{
 		// Process movement
 		if(moveVector.x != 0.0f || moveVector.y != 0.0f) {
-			if(gameObject.GetComponent<Rigidbody2D>().velocity.magnitude >= maxSpeed)
+			if(GetComponent<Rigidbody2D>().velocity.magnitude > maxSpeed)
 			{
-				gameObject.GetComponent<Rigidbody2D> ().velocity = gameObject.GetComponent<Rigidbody2D> ().velocity.normalized * maxSpeed;
+				GetComponent<Rigidbody2D> ().velocity = GetComponent<Rigidbody2D> ().velocity.normalized * maxSpeed;
 			}
 			if(moveVector.y >= -1.0f)
 			{
