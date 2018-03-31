@@ -11,6 +11,7 @@ public class SpawnRiver : MonoBehaviour {
 
 	int numChunks;
 	float yOffset = 0.0f;
+	float spriteBounds = 0.0f;
 
 	// Use this for initialization
 	void Start () {
@@ -23,11 +24,17 @@ public class SpawnRiver : MonoBehaviour {
 		
 	}
 
-	void OnTriggerEnter2D(Collider2D col)
+	void OnTriggerExit2D(Collider2D col)
 	{
-		newChunk = riverBank [Random.Range (0, numChunks)];
-		yOffset = col.gameObject.transform.position.y - newChunk.GetComponent<SpriteRenderer>().bounds.size.y;
-		newPos = new Vector3 (0, yOffset, -10);
-		Instantiate (newChunk, newPos, Quaternion.identity);
+		if (col.gameObject.tag == "River") {
+			newChunk = riverBank [Random.Range (0, numChunks)];
+			spriteBounds = newChunk.GetComponent<SpriteRenderer> ().bounds.size.y;
+			if (spriteBounds == 20)
+				yOffset = col.gameObject.transform.position.y - (spriteBounds + 9.2f);
+			else
+				yOffset = col.gameObject.transform.position.y - spriteBounds;
+			newPos = new Vector3 (0, yOffset, -10);
+			Instantiate (newChunk, newPos, Quaternion.identity);
+		}
 	}
 }
