@@ -397,6 +397,16 @@ Prefab:
       propertyPath: m_RootOrder
       value: 3
       objectReference: {fileID: 0}
+    - target: {fileID: 114951353560190738, guid: c857e5515283b3a4d93415e3b3e15148,
+        type: 2}
+      propertyPath: maxSpeed
+      value: 0.75
+      objectReference: {fileID: 0}
+    - target: {fileID: 114951353560190738, guid: c857e5515283b3a4d93415e3b3e15148,
+        type: 2}
+      propertyPath: moveSpeed
+      value: 16
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: c857e5515283b3a4d93415e3b3e15148, type: 2}
   m_IsPrefabParent: 0
@@ -979,7 +989,7 @@ Prefab:
     - target: {fileID: 114526783734695706, guid: ea919b6e9db02944099721ac711ebc5d,
         type: 2}
       propertyPath: maxSpeed
-      value: 0.5
+      value: 0.75
       objectReference: {fileID: 0}
     - target: {fileID: 4882205035836926, guid: ea919b6e9db02944099721ac711ebc5d, type: 2}
       propertyPath: m_LocalScale.x
@@ -1009,6 +1019,11 @@ Prefab:
         type: 2}
       propertyPath: m_Offset.x
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 114526783734695706, guid: ea919b6e9db02944099721ac711ebc5d,
+        type: 2}
+      propertyPath: moveSpeed
+      value: 16
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: ea919b6e9db02944099721ac711ebc5d, type: 2}
@@ -1138,7 +1153,7 @@ Prefab:
     - target: {fileID: 114132806773983798, guid: 8f8f937014d747642bdb80230865ca8e,
         type: 2}
       propertyPath: maxSpeed
-      value: 0.5
+      value: 0.75
       objectReference: {fileID: 0}
     - target: {fileID: 212224532183715232, guid: 8f8f937014d747642bdb80230865ca8e,
         type: 2}
@@ -1168,6 +1183,11 @@ Prefab:
         type: 2}
       propertyPath: m_Offset.x
       value: -0.05376245
+      objectReference: {fileID: 0}
+    - target: {fileID: 114132806773983798, guid: 8f8f937014d747642bdb80230865ca8e,
+        type: 2}
+      propertyPath: moveSpeed
+      value: 16
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 8f8f937014d747642bdb80230865ca8e, type: 2}
@@ -1385,7 +1405,7 @@ Prefab:
     - target: {fileID: 114107677175997038, guid: a8214446a00b0734cb860e71a10d8612,
         type: 2}
       propertyPath: maxSpeed
-      value: 0.5
+      value: 0.75
       objectReference: {fileID: 0}
     - target: {fileID: 4522713122645546, guid: a8214446a00b0734cb860e71a10d8612, type: 2}
       propertyPath: m_LocalScale.x
@@ -1415,6 +1435,11 @@ Prefab:
         type: 2}
       propertyPath: m_Offset.x
       value: -0.033067763
+      objectReference: {fileID: 0}
+    - target: {fileID: 114107677175997038, guid: a8214446a00b0734cb860e71a10d8612,
+        type: 2}
+      propertyPath: moveSpeed
+      value: 16
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: a8214446a00b0734cb860e71a10d8612, type: 2}
@@ -1550,6 +1575,11 @@ Prefab:
       value: 
       objectReference: {fileID: 21300000, guid: fc285138f0a9428489786ec59ddfd170,
         type: 3}
+    - target: {fileID: 114799574236453358, guid: 2f1f5bfe6092c974c96f8ca199bb95aa,
+        type: 2}
+      propertyPath: m_UiScaleMode
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 2f1f5bfe6092c974c96f8ca199bb95aa, type: 2}
   m_IsPrefabParent: 0
