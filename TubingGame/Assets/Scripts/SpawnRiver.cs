@@ -4,19 +4,21 @@ using UnityEngine;
 
 public class SpawnRiver : MonoBehaviour {
 
+	//Sprite X = 4000
+	//Sprite Y = 8000
+	//Old Sprite X = 1920
+	//Old Sprite Y = 1080
+
 	public List<GameObject> riverBank;
 
 	GameObject newChunk;
-	Vector3 newPos, oldPos;
+	Vector3 newPos;
 
 	int numChunks;
-	float yOffset = 0.0f;
-	float spriteBounds = 0.0f;
 
 	// Use this for initialization
 	void Start () {
 		numChunks = riverBank.Count-1;
-		oldPos = transform.position;
 	}
 	
 	// Update is called once per frame
@@ -24,13 +26,11 @@ public class SpawnRiver : MonoBehaviour {
 		
 	}
 
-	void OnTriggerExit2D(Collider2D col)
+	void OnTriggerEnter2D(Collider2D col)
 	{
-		if (col.gameObject.tag == "River") {
+		if (col.gameObject.tag == "Player") {
 			newChunk = riverBank [Random.Range (0, numChunks)];
-			spriteBounds = newChunk.GetComponent<SpriteRenderer> ().bounds.size.y;
-			yOffset = col.gameObject.transform.position.y - spriteBounds;
-			newPos = new Vector3 (0, yOffset, -10);
+			newPos = new Vector3 (transform.position.x + 1.0f, transform.position.y - newChunk.GetComponent<SpriteRenderer> ().bounds.size.y, -10);
 			Instantiate (newChunk, newPos, Quaternion.identity);
 		}
 	}
