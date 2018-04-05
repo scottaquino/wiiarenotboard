@@ -11,11 +11,40 @@ public class ObstacleSpawn : MonoBehaviour {
 	// Use this for initialization
 	void Start () {
 		obstacles = new List<GameObject> ();
+		LoadObstacles ();
+		SpawnObstacle ();
 	}
 	
-	// Update is called once per frame
-	void Update () {
-		
+	void LoadObstacles()
+	{
+		if(canSpawn[0])
+			obstacles.Add(Resources.Load("Prefabs\\Obstacles\\Rock") as GameObject);
+		else if(canSpawn[1])
+			obstacles.Add(Resources.Load("Prefabs\\Obstacles\\Whirlpool") as GameObject);
+		else if(canSpawn[2])
+			obstacles.Add(Resources.Load("Prefabs\\Obstacles\\Gator") as GameObject);
+		else if(canSpawn[3])
+			obstacles.Add(Resources.Load("Prefabs\\Obstacles\\Log") as GameObject);
+	}
+
+	void SpawnObstacle()
+	{
+		if (obstacles.Count == 4) {
+			Instantiate (obstacles [3], transform.position, Quaternion.identity);
+			return;
+		}
+
+		int temp = Random.Range (0, 100);
+
+		if (temp <= 50) {
+			if (temp <= 30 && obstacles.Count >= 2) {
+				if (temp <= 20 && obstacles.Count >= 3) {
+					Instantiate (obstacles [Random.Range (0, 2)], transform.position, Quaternion.identity);
+				} else
+					Instantiate (obstacles [Random.Range (0, 1)], transform.position, Quaternion.identity);
+			} else
+				Instantiate (obstacles [0], transform.position, Quaternion.identity);
+		}
 	}
 }
 

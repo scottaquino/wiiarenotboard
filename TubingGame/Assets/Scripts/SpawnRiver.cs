@@ -18,7 +18,7 @@ public class SpawnRiver : MonoBehaviour {
 
 	// Use this for initialization
 	void Start () {
-		numChunks = riverBank.Count-1;
+		numChunks = riverBank.Count;
 	}
 	
 	// Update is called once per frame
@@ -29,9 +29,13 @@ public class SpawnRiver : MonoBehaviour {
 	void OnTriggerEnter2D(Collider2D col)
 	{
 		if (col.gameObject.tag == "Player") {
-			newChunk = riverBank [Random.Range (0, numChunks)];
-			newPos = new Vector3 (transform.position.x + 1.0f, transform.position.y - newChunk.GetComponent<SpriteRenderer> ().bounds.size.y, -10);
+			newChunk = riverBank [Random.Range(0, numChunks)];
+			if(newChunk == riverBank[0])
+				newPos = new Vector3 (transform.position.x + 13.15f, transform.position.y - (newChunk.GetComponent<SpriteRenderer> ().bounds.size.y / 2) - .4f, -10);
+			else if(newChunk == riverBank[1])
+				newPos = new Vector3 (transform.position.x - 10.0f, transform.position.y - (newChunk.GetComponent<SpriteRenderer> ().bounds.size.y / 2) - .4f, -10);
 			Instantiate (newChunk, newPos, Quaternion.identity);
+			GetComponent<SpawnRiver> ().enabled = false;
 		}
 	}
 }
