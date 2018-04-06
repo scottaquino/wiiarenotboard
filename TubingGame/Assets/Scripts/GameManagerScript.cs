@@ -15,12 +15,16 @@ public class GameManagerScript : MonoBehaviour {
 	public GameObject player3;
 	public GameObject player4;
 
+	public List<GameObject> players = new List<GameObject>();
+
 
 	// Use this for initialization
 	void Start () {
 		DontDestroyOnLoad (this.gameObject);
 		titleManager = GameObject.Find ("TitleManager");
-		playerCount = titleManager.GetComponent<TitleManagerScript> ().playerCount;
+		if (titleManager) {
+			playerCount = titleManager.GetComponent<TitleManagerScript> ().playerCount;
+		}
 		if(playerCount == 1)
 		{
 			player1.SetActive (true);
@@ -31,6 +35,7 @@ public class GameManagerScript : MonoBehaviour {
 			p2.gameObject.SetActive (false);
 			p3.gameObject.SetActive (false);
 			p4.gameObject.SetActive (false);
+			players.Add (player1);
 		}
 		if(playerCount == 2)
 		{
@@ -42,6 +47,8 @@ public class GameManagerScript : MonoBehaviour {
 			p2.gameObject.SetActive (true);
 			p3.gameObject.SetActive (false);
 			p4.gameObject.SetActive (false);
+			players.Add (player1);
+			players.Add (player2);
 		}
 		if(playerCount == 3)
 		{
@@ -53,6 +60,9 @@ public class GameManagerScript : MonoBehaviour {
 			p2.gameObject.SetActive (true);
 			p3.gameObject.SetActive (true);
 			p4.gameObject.SetActive (false);
+			players.Add (player1);
+			players.Add (player2);
+			players.Add (player3);
 		}
 		if(playerCount == 4)
 		{
@@ -64,6 +74,10 @@ public class GameManagerScript : MonoBehaviour {
 			p2.gameObject.SetActive (true);
 			p3.gameObject.SetActive (true);
 			p4.gameObject.SetActive (true);
+			players.Add (player1);
+			players.Add (player2);
+			players.Add (player3);
+			players.Add (player4);
 		}
 	}
 

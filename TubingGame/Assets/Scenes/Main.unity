@@ -830,7 +830,7 @@ Prefab:
       objectReference: {fileID: 2069186442}
     - target: {fileID: 1319579094088774, guid: ea919b6e9db02944099721ac711ebc5d, type: 2}
       propertyPath: m_IsActive
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 4882205035836926, guid: ea919b6e9db02944099721ac711ebc5d, type: 2}
       propertyPath: m_LocalScale.x
@@ -1002,6 +1002,11 @@ Prefab:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 114923550406851690, guid: 7810e2226328f8b40ad4ffec402f212f,
+        type: 2}
+      propertyPath: players.Array.size
+      value: 4
+      objectReference: {fileID: 0}
     - target: {fileID: 4344191788049092, guid: 7810e2226328f8b40ad4ffec402f212f, type: 2}
       propertyPath: m_LocalPosition.x
       value: 3.06
@@ -1067,6 +1072,26 @@ Prefab:
       propertyPath: stormSpeed
       value: 0.01
       objectReference: {fileID: 0}
+    - target: {fileID: 114923550406851690, guid: 7810e2226328f8b40ad4ffec402f212f,
+        type: 2}
+      propertyPath: players.Array.data[0]
+      value: 
+      objectReference: {fileID: 810166499}
+    - target: {fileID: 114923550406851690, guid: 7810e2226328f8b40ad4ffec402f212f,
+        type: 2}
+      propertyPath: players.Array.data[1]
+      value: 
+      objectReference: {fileID: 1136151016}
+    - target: {fileID: 114923550406851690, guid: 7810e2226328f8b40ad4ffec402f212f,
+        type: 2}
+      propertyPath: players.Array.data[3]
+      value: 
+      objectReference: {fileID: 1924630946}
+    - target: {fileID: 114923550406851690, guid: 7810e2226328f8b40ad4ffec402f212f,
+        type: 2}
+      propertyPath: players.Array.data[2]
+      value: 
+      objectReference: {fileID: 1001898799}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 7810e2226328f8b40ad4ffec402f212f, type: 2}
   m_IsPrefabParent: 0
@@ -1236,7 +1261,7 @@ Prefab:
     - target: {fileID: 114499778510261136, guid: 53f1202b34a5c9c4fb54b0ff9a079b84,
         type: 2}
       propertyPath: playerCount
-      value: 2
+      value: 3
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 53f1202b34a5c9c4fb54b0ff9a079b84, type: 2}

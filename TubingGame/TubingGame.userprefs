@@ -1,12 +1,12 @@
 ﻿<Properties StartupItem="Assembly-CSharp.csproj">
   <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" PreferredExecutionTarget="Unity.Instance.Unity Editor" />
-  <MonoDevelop.Ide.Workbench ActiveDocument="Assets\Scripts\ObstacleSpawn.cs">
+  <MonoDevelop.Ide.Workbench ActiveDocument="Assets\Scripts\CameraControl.cs">
     <Files>
-      <File FileName="Assets\Scripts\CameraControl.cs" Line="1" Column="1" />
-      <File FileName="Assets\Scripts\DestroyerScript.cs" Line="1" Column="1" />
-      <File FileName="Assets\Scripts\GameManagerScript.cs" Line="1" Column="1" />
+      <File FileName="Assets\Scripts\CameraControl.cs" Line="117" Column="1" />
+      <File FileName="Assets\Scripts\DestroyerScript.cs" Line="14" Column="32" />
+      <File FileName="Assets\Scripts\GameManagerScript.cs" Line="86" Column="1" />
       <File FileName="Assets\Scripts\SpawnRiver.cs" Line="1" Column="1" />
-      <File FileName="Assets\Scripts\ObstacleSpawn.cs" Line="27" Column="34" />
+      <File FileName="Assets\Scripts\ObstacleSpawn.cs" Line="1" Column="1" />
     </Files>
   </MonoDevelop.Ide.Workbench>
   <MonoDevelop.Ide.DebuggingService.Breakpoints>
