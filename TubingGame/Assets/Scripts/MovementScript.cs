@@ -14,6 +14,14 @@ public class MovementScript : MonoBehaviour {
 	public float bounceControl = 0.1f;
 	bool bouncing = false;
 
+	public GameObject manager;
+
+	public GameObject otherPlayer1;
+	public GameObject otherPlayer2;
+	public GameObject otherPlayer3;
+
+	public bool first;
+
 	private Player player; // The Rewired Player
 	//private CharacterController cc;
 	private Vector3 moveVector; 
@@ -29,12 +37,14 @@ public class MovementScript : MonoBehaviour {
 	// Use this for initialization
 	void Start () {
 		moveVector.y = -1.1f;
+		gameObject.GetComponent<CheckScript> ().SetPlayers ();
 	}
 	
 	// Update is called once per frame
 	void FixedUpdate () {
 		GetInput();
 		ProcessInput();
+		CheckFirst ();
 	}
 
 	void GetInput()
@@ -85,6 +95,33 @@ public class MovementScript : MonoBehaviour {
 		yield return new WaitForSeconds(bounceControl);
 		bouncing = false;
     }
+
+	void CheckFirst()
+	{
+		if(manager.GetComponent<GameManagerScript>().playerCount == 2) {
+			if (gameObject.transform.position.y < otherPlayer1.transform.position.y) {
+				first = true;
+			} else {
+				first = false;
+			}
+		} else if(manager.GetComponent<GameManagerScript>().playerCount == 3) {
+			if (gameObject.transform.position.y < otherPlayer1.transform.position.y && gameObject.transform.position.y < otherPlayer2.transform.position.y) {
+				first = true;
+			} else {
+				first = false;
+			}
+		} else if(manager.GetComponent<GameManagerScript>().playerCount == 4) {
+			if (gameObject.transform.position.y < otherPlayer1.transform.position.y && gameObject.transform.position.y < otherPlayer2.transform.position.y && gameObject.transform.position.y < otherPlayer3.transform.position.y) {
+				first = true;
+			} else {
+				first = false;
+			}
+		}
+
+		if(first) {
+			//Debug.Log(gameObject);
+		}
+	}
 
 }  
  

@@ -39,6 +39,7 @@ GameObject:
   - component: {fileID: 114526783734695706}
   - component: {fileID: 50744260406034860}
   - component: {fileID: 60164785135769778}
+  - component: {fileID: 114028581559507940}
   m_Layer: 0
   m_Name: Player3
   m_TagString: Player
@@ -66,7 +67,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1319579094088774}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -2.7070003, y: 0.35099998, z: 0}
+  m_LocalPosition: {x: -2.7070003, y: 0.477, z: 0}
   m_LocalScale: {x: 0.6000072, y: 0.68564457, z: 1}
   m_Children:
   - {fileID: 4285718892621252}
@@ -168,6 +169,17 @@ PolygonCollider2D:
       - {x: 0.375, y: -0.005}
       - {x: 0.074999996, y: -0.085}
       - {x: -0.185, y: -0.085}
+--- !u!114 &114028581559507940
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1319579094088774}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 455a6a1d5bc3d3549b0e0400eb1afbcb, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!114 &114526783734695706
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -185,6 +197,13 @@ MonoBehaviour:
   gravity: 2
   bounce: 1.75
   bounceControl: 0.2
+  otherPlayer1: {fileID: 1970958538321810, guid: c857e5515283b3a4d93415e3b3e15148,
+    type: 2}
+  otherPlayer2: {fileID: 1950132657019748, guid: 8f8f937014d747642bdb80230865ca8e,
+    type: 2}
+  otherPlayer3: {fileID: 1591364603188762, guid: a8214446a00b0734cb860e71a10d8612,
+    type: 2}
+  first: 0
 --- !u!212 &212030182408841460
 SpriteRenderer:
   m_ObjectHideFlags: 1

@@ -39,6 +39,7 @@ GameObject:
   - component: {fileID: 114107677175997038}
   - component: {fileID: 50946003570845530}
   - component: {fileID: 60134202348635788}
+  - component: {fileID: 114305529484779630}
   m_Layer: 0
   m_Name: Player4
   m_TagString: Player
@@ -53,7 +54,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1591364603188762}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 3.322, y: 0.433, z: 0}
+  m_LocalPosition: {x: 3.322, y: 0.559, z: 0}
   m_LocalScale: {x: 0.5618689, y: 0.6968197, z: 1}
   m_Children:
   - {fileID: 4777651300704936}
@@ -185,6 +186,24 @@ MonoBehaviour:
   gravity: 2
   bounce: 1.75
   bounceControl: 0.2
+  otherPlayer1: {fileID: 1970958538321810, guid: c857e5515283b3a4d93415e3b3e15148,
+    type: 2}
+  otherPlayer2: {fileID: 1950132657019748, guid: 8f8f937014d747642bdb80230865ca8e,
+    type: 2}
+  otherPlayer3: {fileID: 1319579094088774, guid: ea919b6e9db02944099721ac711ebc5d,
+    type: 2}
+  first: 0
+--- !u!114 &114305529484779630
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1591364603188762}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 455a6a1d5bc3d3549b0e0400eb1afbcb, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!212 &212328707742032006
 SpriteRenderer:
   m_ObjectHideFlags: 1

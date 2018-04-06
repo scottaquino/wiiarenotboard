@@ -5,26 +5,29 @@ using UnityEngine;
 public class CameraControl : MonoBehaviour {
 
 	public float moveSpeed;
-
 	bool pushed = false;
 	bool moving = false;
 	public float speedIncrease = 1.5f;
 	float pushSpeed = -1.0f;
 	public float maxSpeed = 3.0f;
 	Vector3 moveDirection;
+	public Transform target;
+	public float cameraSpeed;
 
 	// Use this for initialization
 	void Start () {
 		moveDirection = new Vector3 (0f, 1f, 0f);
+		target = transform;
 	}
 	
 	// Update is called once per frame
 	void FixedUpdate () {
-		if (!pushed && !moving) {
-			transform.position += Vector3.down * moveSpeed * Time.deltaTime;
-		} else if(pushed && !moving) {
-			StartCoroutine (Move());
-		}
+		//if (!pushed && !moving) {
+			//transform.position += Vector3.down * moveSpeed * Time.deltaTime;
+			transform.position = Vector3.Lerp(transform.position, target.position, Time.deltaTime * cameraSpeed);
+		//} else if(pushed && !moving) {
+		//	StartCoroutine (Move());
+		//}
 	}
 
 	void OnTriggerEnter2D(Collider2D col)
