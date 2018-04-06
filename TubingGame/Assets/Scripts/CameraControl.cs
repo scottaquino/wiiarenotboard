@@ -11,17 +11,15 @@ public class CameraControl : MonoBehaviour {
 	float pushSpeed = -0.5f;
 	public float maxSpeed = 3.0f;
 	Vector3 moveDirection;
-	public Transform target;
-	public float cameraSpeed;
 	public GameObject manager;
-	float avgX = 0.0f;
-	float avgY = 0.0f;
+    public GameObject destroyer;
+	public float avgX = 0.0f;
+	public float avgY = 0.0f;
 
 
 	// Use this for initialization
 	void Start () {
 		moveDirection = new Vector3 (0f, 1f, 0f);
-		target = transform;
 	}
 	
 	// Update is called once per frame
@@ -29,8 +27,11 @@ public class CameraControl : MonoBehaviour {
 		if (!pushed && !moving) {
 			Average ();
 			transform.position = new Vector3(avgX, avgY - moveSpeed);
-			//transform.position = Vector3.Lerp(transform.position, target.position, Time.deltaTime * cameraSpeed);
-		} else if(pushed && !moving) {
+            if(!destroyer.GetComponent<DestroyerScript>().katrina)
+            {
+                destroyer.transform.position = transform.position;
+            }
+        } else if(pushed && !moving) {
 			StartCoroutine (Move());
 			avgX = 0.0f;
 			avgY = 0.0f;

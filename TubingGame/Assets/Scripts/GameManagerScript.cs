@@ -65,7 +65,6 @@ public class GameManagerScript : MonoBehaviour {
 			p3.gameObject.SetActive (true);
 			p4.gameObject.SetActive (true);
 		}
-		destroyer.GetComponent<DestroyerScript> ().numPlayers = playerCount;
 	}
 
 

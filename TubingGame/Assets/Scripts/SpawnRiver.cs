@@ -14,7 +14,6 @@ public class SpawnRiver : MonoBehaviour {
 	GameObject newChunk;
 	Vector3 newPos;
 	bool spawned = false;
-	public GameObject camera;
 
 	int numChunks;
 
