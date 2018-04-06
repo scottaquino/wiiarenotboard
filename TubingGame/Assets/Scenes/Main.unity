@@ -195,7 +195,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 4506664881001770, guid: c857e5515283b3a4d93415e3b3e15148, type: 2}
       propertyPath: m_LocalPosition.y
-      value: -2.925
+      value: -3.7
       objectReference: {fileID: 0}
     - target: {fileID: 4506664881001770, guid: c857e5515283b3a4d93415e3b3e15148, type: 2}
       propertyPath: m_LocalPosition.z
@@ -249,6 +249,11 @@ Prefab:
       propertyPath: bounceControl
       value: 0.15
       objectReference: {fileID: 0}
+    - target: {fileID: 114951353560190738, guid: c857e5515283b3a4d93415e3b3e15148,
+        type: 2}
+      propertyPath: camera
+      value: 
+      objectReference: {fileID: 2073925204}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: c857e5515283b3a4d93415e3b3e15148, type: 2}
   m_IsPrefabParent: 0
@@ -797,7 +802,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 4882205035836926, guid: ea919b6e9db02944099721ac711ebc5d, type: 2}
       propertyPath: m_LocalPosition.y
-      value: -2.9
+      value: -3.6749997
       objectReference: {fileID: 0}
     - target: {fileID: 4882205035836926, guid: ea919b6e9db02944099721ac711ebc5d, type: 2}
       propertyPath: m_LocalPosition.z
@@ -855,6 +860,11 @@ Prefab:
       propertyPath: bounceControl
       value: 0.15
       objectReference: {fileID: 0}
+    - target: {fileID: 114526783734695706, guid: ea919b6e9db02944099721ac711ebc5d,
+        type: 2}
+      propertyPath: camera
+      value: 
+      objectReference: {fileID: 2073925204}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: ea919b6e9db02944099721ac711ebc5d, type: 2}
   m_IsPrefabParent: 0
@@ -876,7 +886,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 4342231066961702, guid: 8f8f937014d747642bdb80230865ca8e, type: 2}
       propertyPath: m_LocalPosition.y
-      value: -2.91
+      value: -3.6849995
       objectReference: {fileID: 0}
     - target: {fileID: 4342231066961702, guid: 8f8f937014d747642bdb80230865ca8e, type: 2}
       propertyPath: m_LocalPosition.z
@@ -930,6 +940,11 @@ Prefab:
       propertyPath: bounceControl
       value: 0.15
       objectReference: {fileID: 0}
+    - target: {fileID: 114132806773983798, guid: 8f8f937014d747642bdb80230865ca8e,
+        type: 2}
+      propertyPath: camera
+      value: 
+      objectReference: {fileID: 2073925204}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 8f8f937014d747642bdb80230865ca8e, type: 2}
   m_IsPrefabParent: 0
@@ -1002,18 +1017,13 @@ Prefab:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
-    - target: {fileID: 114923550406851690, guid: 7810e2226328f8b40ad4ffec402f212f,
-        type: 2}
-      propertyPath: players.Array.size
-      value: 4
-      objectReference: {fileID: 0}
     - target: {fileID: 4344191788049092, guid: 7810e2226328f8b40ad4ffec402f212f, type: 2}
       propertyPath: m_LocalPosition.x
       value: 3.06
       objectReference: {fileID: 0}
     - target: {fileID: 4344191788049092, guid: 7810e2226328f8b40ad4ffec402f212f, type: 2}
       propertyPath: m_LocalPosition.y
-      value: -5.52
+      value: -6.2949996
       objectReference: {fileID: 0}
     - target: {fileID: 4344191788049092, guid: 7810e2226328f8b40ad4ffec402f212f, type: 2}
       propertyPath: m_LocalPosition.z
@@ -1039,39 +1049,16 @@ Prefab:
       propertyPath: m_RootOrder
       value: 2
       objectReference: {fileID: 0}
+    - target: {fileID: 114032079167165178, guid: 7810e2226328f8b40ad4ffec402f212f,
+        type: 2}
+      propertyPath: manager
+      value: 
+      objectReference: {fileID: 2069186442}
     - target: {fileID: 114923550406851690, guid: 7810e2226328f8b40ad4ffec402f212f,
         type: 2}
       propertyPath: manager
       value: 
       objectReference: {fileID: 2069186442}
-    - target: {fileID: 114032079167165178, guid: 7810e2226328f8b40ad4ffec402f212f,
-        type: 2}
-      propertyPath: manager
-      value: 
-      objectReference: {fileID: 2069186442}
-    - target: {fileID: 1535911692604962, guid: 7810e2226328f8b40ad4ffec402f212f, type: 2}
-      propertyPath: m_Name
-      value: MainCamera
-      objectReference: {fileID: 0}
-    - target: {fileID: 114032079167165178, guid: 7810e2226328f8b40ad4ffec402f212f,
-        type: 2}
-      propertyPath: katrina
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 4421093200716674, guid: 7810e2226328f8b40ad4ffec402f212f, type: 2}
-      propertyPath: m_LocalPosition.x
-      value: -2.25
-      objectReference: {fileID: 0}
-    - target: {fileID: 114032079167165178, guid: 7810e2226328f8b40ad4ffec402f212f,
-        type: 2}
-      propertyPath: deathTimer
-      value: 20
-      objectReference: {fileID: 0}
-    - target: {fileID: 114032079167165178, guid: 7810e2226328f8b40ad4ffec402f212f,
-        type: 2}
-      propertyPath: stormSpeed
-      value: 0.01
-      objectReference: {fileID: 0}
     - target: {fileID: 114923550406851690, guid: 7810e2226328f8b40ad4ffec402f212f,
         type: 2}
       propertyPath: players.Array.data[0]
@@ -1084,14 +1071,18 @@ Prefab:
       objectReference: {fileID: 1136151016}
     - target: {fileID: 114923550406851690, guid: 7810e2226328f8b40ad4ffec402f212f,
         type: 2}
-      propertyPath: players.Array.data[3]
-      value: 
-      objectReference: {fileID: 1924630946}
-    - target: {fileID: 114923550406851690, guid: 7810e2226328f8b40ad4ffec402f212f,
-        type: 2}
       propertyPath: players.Array.data[2]
       value: 
       objectReference: {fileID: 1001898799}
+    - target: {fileID: 114923550406851690, guid: 7810e2226328f8b40ad4ffec402f212f,
+        type: 2}
+      propertyPath: players.Array.data[3]
+      value: 
+      objectReference: {fileID: 1924630946}
+    - target: {fileID: 1535911692604962, guid: 7810e2226328f8b40ad4ffec402f212f, type: 2}
+      propertyPath: m_Name
+      value: MainCamera
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 7810e2226328f8b40ad4ffec402f212f, type: 2}
   m_IsPrefabParent: 0
@@ -1108,7 +1099,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 4522713122645546, guid: a8214446a00b0734cb860e71a10d8612, type: 2}
       propertyPath: m_LocalPosition.y
-      value: -2.92
+      value: -3.6949997
       objectReference: {fileID: 0}
     - target: {fileID: 4522713122645546, guid: a8214446a00b0734cb860e71a10d8612, type: 2}
       propertyPath: m_LocalPosition.z
@@ -1166,6 +1157,11 @@ Prefab:
       propertyPath: bounceControl
       value: 0.15
       objectReference: {fileID: 0}
+    - target: {fileID: 114107677175997038, guid: a8214446a00b0734cb860e71a10d8612,
+        type: 2}
+      propertyPath: camera
+      value: 
+      objectReference: {fileID: 2073925204}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: a8214446a00b0734cb860e71a10d8612, type: 2}
   m_IsPrefabParent: 0
@@ -1271,6 +1267,11 @@ GameObject:
   m_PrefabParentObject: {fileID: 1489195068785968, guid: 53f1202b34a5c9c4fb54b0ff9a079b84,
     type: 2}
   m_PrefabInternal: {fileID: 2069186441}
+--- !u!1 &2073925204 stripped
+GameObject:
+  m_PrefabParentObject: {fileID: 1535911692604962, guid: 7810e2226328f8b40ad4ffec402f212f,
+    type: 2}
+  m_PrefabInternal: {fileID: 1919320034}
 --- !u!1 &2130593228 stripped
 GameObject:
   m_PrefabParentObject: {fileID: 1227178244816810, guid: 7810e2226328f8b40ad4ffec402f212f,

@@ -10,17 +10,20 @@ public class MovementScript : MonoBehaviour {
 	public float moveSpeed = 3.0f;
 	public float maxSpeed = 3.0f;
 	public float gravity = 2.0f;
-    public float bounce = 15.0f;
+	public float bounce = 15.0f;
 	public float bounceControl = 0.1f;
 	bool bouncing = false;
+	bool isFirst = false;
 
 	public GameObject manager;
+	public GameObject camera;
 
 	public GameObject otherPlayer1;
 	public GameObject otherPlayer2;
 	public GameObject otherPlayer3;
 
 	public bool first;
+	public float firstPenalty = 1.0f;
 
 	private Player player; // The Rewired Player
 	//private CharacterController cc;
@@ -29,9 +32,6 @@ public class MovementScript : MonoBehaviour {
 	void Awake() {
 		// Get the Rewired Player object for this player and keep it for the duration of the character's lifetime
 		player = ReInput.players.GetPlayer(playerId);
-
-		// Get the character controller
-		//cc = gameObject.GetComponent<CharacterController>();
 	}
 
 	// Use this for initialization
@@ -39,12 +39,11 @@ public class MovementScript : MonoBehaviour {
 		moveVector.y = -1.1f;
 		gameObject.GetComponent<CheckScript> ().SetPlayers ();
 	}
-	
+
 	// Update is called once per frame
 	void FixedUpdate () {
 		GetInput();
 		ProcessInput();
-		CheckFirst ();
 	}
 
 	void GetInput()
@@ -58,10 +57,16 @@ public class MovementScript : MonoBehaviour {
 			moveVector.x = player.GetAxis("Horizontal") * moveSpeed; // get input by name or action id
 		}
 	}
-	 
+
 	void ProcessInput()
 	{
 		// Process movement
+		first = CheckFirst ();
+		if (first) {
+			firstPenalty = 0.75f;
+		} else {
+			firstPenalty = 1.0f;
+		}
 		if(moveVector.x != 0.0f || moveVector.y != 0.0f) {
 			if(GetComponent<Rigidbody2D>().velocity.magnitude > maxSpeed)
 			{
@@ -71,20 +76,20 @@ public class MovementScript : MonoBehaviour {
 			{
 				moveVector.y = 0.2f;
 			}
-			gameObject.GetComponent<Rigidbody2D>().AddForce(moveVector * moveSpeed);
+			gameObject.GetComponent<Rigidbody2D>().AddForce(moveVector * moveSpeed * firstPenalty);
 		} 
 	}
 
-    void OnCollisionEnter2D(Collision2D collision)
-    {
-        Debug.Log("COLLIDING");
+	void OnCollisionEnter2D(Collision2D collision)
+	{
+		Debug.Log("COLLIDING");
 		StartCoroutine(Bounce(collision));
-    }
+	}
 
 	IEnumerator Bounce(Collision2D col)
-    {
-        Debug.Log("BOUNCING");
-        gameObject.GetComponent<Rigidbody2D>().AddForce(-moveVector * bounce/2 * moveSpeed); //bounce math for aggressor
+	{
+		Debug.Log("BOUNCING");
+		gameObject.GetComponent<Rigidbody2D>().AddForce(-moveVector * bounce/2 * moveSpeed); //bounce math for aggressor
 		col.gameObject.GetComponent<Rigidbody2D>().AddForce(moveVector * bounce * moveSpeed); //bounce math for person getting bumped
 
 		//Take away control of movement during bounce
@@ -94,34 +99,20 @@ public class MovementScript : MonoBehaviour {
 		moveVector.y = 0.0f;
 		yield return new WaitForSeconds(bounceControl);
 		bouncing = false;
-    }
+	}
 
-	void CheckFirst()
+	bool CheckFirst()
 	{
-		if(manager.GetComponent<GameManagerScript>().playerCount == 2) {
-			if (gameObject.transform.position.y < otherPlayer1.transform.position.y) {
-				first = true;
+		for(int i = 0; i < manager.GetComponent<GameManagerScript>().playerCount; i++)
+		{
+			if (gameObject.transform.position.y <= camera.GetComponent<CameraControl> ().players [i].transform.position.y) {
+				isFirst = true;
 			} else {
-				first = false;
-			}
-		} else if(manager.GetComponent<GameManagerScript>().playerCount == 3) {
-			if (gameObject.transform.position.y < otherPlayer1.transform.position.y && gameObject.transform.position.y < otherPlayer2.transform.position.y) {
-				first = true;
-			} else {
-				first = false;
-			}
-		} else if(manager.GetComponent<GameManagerScript>().playerCount == 4) {
-			if (gameObject.transform.position.y < otherPlayer1.transform.position.y && gameObject.transform.position.y < otherPlayer2.transform.position.y && gameObject.transform.position.y < otherPlayer3.transform.position.y) {
-				first = true;
-			} else {
-				first = false;
+				isFirst = false;
+				return isFirst;
 			}
 		}
-
-		if(first) {
-			//Debug.Log(gameObject);
-		}
+		return isFirst;
 	}
 
 }  
- 
