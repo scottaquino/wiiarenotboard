@@ -25,9 +25,9 @@ public class MovementScript : MonoBehaviour {
 	public bool first;
 	public float firstPenalty = 1.0f;
 
-	private Player player; // The Rewired Player
+	public Player player; // The Rewired Player
 	//private CharacterController cc;
-	private Vector3 moveVector; 
+	public Vector3 moveVector; 
 
 	void Awake() {
 		// Get the Rewired Player object for this player and keep it for the duration of the character's lifetime

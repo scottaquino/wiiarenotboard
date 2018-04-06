@@ -34,7 +34,7 @@ public class TitleManagerScript : MonoBehaviour {
 
 	public void RemovePlayers()
 	{
-		if(playerCount > 1)
+		if(playerCount > 2)
 		{
 			playerCount--;
 		}

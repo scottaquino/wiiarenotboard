@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using UnityEngine.SceneManagement;
 
 public class WinnerScript : MonoBehaviour {
 
@@ -28,5 +29,15 @@ public class WinnerScript : MonoBehaviour {
 	// Update is called once per frame
 	void Update () {
 		
+	}
+
+	public void Replay ()
+	{
+		SceneManager.LoadScene ("TitleScreen");
+	}
+
+	public void Quit()
+	{
+		Application.Quit ();
 	}
 }

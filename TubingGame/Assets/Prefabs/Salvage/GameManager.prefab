@@ -51,7 +51,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b5977251e94d7774cb411cd1ade105d8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  playerCount: 4
+  playerCount: 3
   destroyer: {fileID: 0}
   player1Win: 1
   player2Win: 1
@@ -65,3 +65,9 @@ MonoBehaviour:
   player2: {fileID: 0}
   player3: {fileID: 0}
   player4: {fileID: 0}
+  camera: {fileID: 0}
+  players:
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
