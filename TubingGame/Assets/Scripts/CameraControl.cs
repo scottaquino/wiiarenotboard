@@ -110,7 +110,12 @@ public class CameraControl : MonoBehaviour {
 			avgY += players[2].transform.position.y;
 			avgY += players[3].transform.position.y;
 		}
-		avgY /= manager.GetComponent<GameManagerScript> ().playerCount;
+		for (int i = 0; i < manager.GetComponent<GameManagerScript> ().playerCount; i++) {
+			if(players[i].GetComponent<MovementScript>().first) {
+				avgY += players[i].transform.position.y * 2.0f;
+			}
+		}
+		avgY /= manager.GetComponent<GameManagerScript> ().playerCount + 2.0f;
 		//Debug.Log (avgY);
 	}
 }
