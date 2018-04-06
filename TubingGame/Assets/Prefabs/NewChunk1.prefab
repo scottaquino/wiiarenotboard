@@ -1030,7 +1030,6 @@ MonoBehaviour:
   riverBank:
   - {fileID: 1976326104945584}
   - {fileID: 1102992255679968, guid: c5967d8bdfa83b942b95c1b89d110b09, type: 2}
-  camera: {fileID: 1535911692604962, guid: 7810e2226328f8b40ad4ffec402f212f, type: 2}
 --- !u!114 &114380044260824522
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -1196,7 +1195,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 0
+  m_SortingOrder: -1
   m_Sprite: {fileID: 21300000, guid: fae57c4e9955c884fb802e1b880d5527, type: 3}
   m_Color: {r: 0.90531635, g: 0.9338235, b: 0.6385705, a: 1}
   m_FlipX: 0

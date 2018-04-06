@@ -18,13 +18,13 @@ public class ObstacleSpawn : MonoBehaviour {
 	void LoadObstacles()
 	{
 		if(canSpawn[0])
-			obstacles.Add(Resources.Load("Prefabs\\Obstacles\\Rock") as GameObject);
+			obstacles.Add(Resources.Load("Rock") as GameObject);
 		else if(canSpawn[1])
-			obstacles.Add(Resources.Load("Prefabs\\Obstacles\\Whirlpool") as GameObject);
+			obstacles.Add(Resources.Load("Whirlpool") as GameObject);
 		else if(canSpawn[2])
-			obstacles.Add(Resources.Load("Prefabs\\Obstacles\\Gator") as GameObject);
+			obstacles.Add(Resources.Load("Gator") as GameObject);
 		else if(canSpawn[3])
-			obstacles.Add(Resources.Load("Prefabs\\Obstacles\\Log") as GameObject);
+			obstacles.Add(Resources.Load("Log") as GameObject);
 	}
 
 	void SpawnObstacle()
