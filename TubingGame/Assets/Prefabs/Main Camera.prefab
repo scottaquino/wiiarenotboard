@@ -296,6 +296,9 @@ MonoBehaviour:
   moveSpeed: 3
   speedIncrease: 2
   maxSpeed: 3
+  target: {fileID: 0}
+  cameraSpeed: 0
+  manager: {fileID: 0}
 --- !u!124 &124967235680080604
 Behaviour:
   m_ObjectHideFlags: 1

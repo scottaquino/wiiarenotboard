@@ -186,6 +186,7 @@ MonoBehaviour:
   gravity: 2
   bounce: 1.75
   bounceControl: 0.2
+  manager: {fileID: 0}
   otherPlayer1: {fileID: 1970958538321810, guid: c857e5515283b3a4d93415e3b3e15148,
     type: 2}
   otherPlayer2: {fileID: 1319579094088774, guid: ea919b6e9db02944099721ac711ebc5d,

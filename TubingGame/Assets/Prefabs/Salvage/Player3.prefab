@@ -46,7 +46,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &4285718892621252
 Transform:
   m_ObjectHideFlags: 1
@@ -197,6 +197,7 @@ MonoBehaviour:
   gravity: 2
   bounce: 1.75
   bounceControl: 0.2
+  manager: {fileID: 0}
   otherPlayer1: {fileID: 1970958538321810, guid: c857e5515283b3a4d93415e3b3e15148,
     type: 2}
   otherPlayer2: {fileID: 1950132657019748, guid: 8f8f937014d747642bdb80230865ca8e,

@@ -51,9 +51,6 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
-     <Compile Include="Assets\CameraPosScript.cs" />
-     <Compile Include="Assets\CheckScript.cs" />
-     <Compile Include="Assets\ChunkCameraScript.cs" />
      <Compile Include="Assets\Rewired\Extras\ControlMapper\Examples\ControlMapperDemo\Scripts\ControlMapperDemoMessage.cs" />
      <Compile Include="Assets\Rewired\Extras\ControlMapper\Scripts\ButtonInfo.cs" />
      <Compile Include="Assets\Rewired\Extras\ControlMapper\Scripts\CalibrationWindow.cs" />
@@ -93,6 +90,7 @@
      <Compile Include="Assets\Rewired\Internal\Scripts\Misc\ExternalTools.cs" />
      <Compile Include="Assets\Rewired\Internal\Scripts\Platforms\Ouya\OuyaInputSource.cs" />
      <Compile Include="Assets\Scripts\CameraControl.cs" />
+     <Compile Include="Assets\Scripts\CheckScript.cs" />
      <Compile Include="Assets\Scripts\DestroyerScript.cs" />
      <Compile Include="Assets\Scripts\GameManagerScript.cs" />
      <Compile Include="Assets\Scripts\MovementScript.cs" />

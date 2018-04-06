@@ -18,15 +18,18 @@ public class DestroyerScript : MonoBehaviour {
 	}
 	
 	// Update is called once per frame
-	void Update () {
+	void FixedUpdate () {
 		if(katrina)
 		{
 			transform.position = new Vector3 (0.0f, gameObject.transform.position.y - stormSpeed * 0.01f, 0.0f);
 		}
+		transform.position = gameObject.GetComponentInParent<Transform> ().transform.position;
 	}
 
-	void OnTriggerEnter2D(Collider2D col)
+	void OnTriggerExit2D(Collider2D col)
 	{
+		Debug.Log (col.gameObject.tag);
+		Debug.Log (numPlayers);
 		if (col.gameObject.tag == "Player" && numPlayers > 1) {
 			if (col.gameObject.GetComponent<MovementScript>().playerId == 0)
 			{
@@ -49,17 +52,18 @@ public class DestroyerScript : MonoBehaviour {
 				manager.GetComponent<GameManagerScript> ().p4.gameObject.SetActive (false);
 			}
 			Destroy (col.gameObject);
+			Debug.Log ("WORKING???");
 			numPlayers--;
 			if (numPlayers == 1)
 				EndGame ();
 		}
 	}
 
-	void OnTriggerExit2D(Collider2D col)
-	{
-		if (col.gameObject.tag == "River")
-			Destroy (col.gameObject);
-	}
+	//void OnTriggerExit2D(Collider2D col)
+	//{
+	//	if (col.gameObject.tag == "River")
+	//		Destroy (col.gameObject);
+	//}
 
 	void EndGame()
 	{

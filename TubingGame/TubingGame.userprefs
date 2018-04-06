@@ -1,15 +1,11 @@
 ﻿<Properties StartupItem="Assembly-CSharp.csproj">
   <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" PreferredExecutionTarget="Unity.Instance.Unity Editor" />
-  <MonoDevelop.Ide.Workbench ActiveDocument="Assets\CheckScript.cs">
+  <MonoDevelop.Ide.Workbench ActiveDocument="Assets\Scripts\SpawnRiver.cs">
     <Files>
-      <File FileName="Assets\Scripts\SpawnRiver.cs" Line="31" Column="39" />
-      <File FileName="Assets\Scripts\CameraControl.cs" Line="20" Column="22" />
-      <File FileName="Assets\CameraPosScript.cs" Line="26" Column="1" />
-      <File FileName="Assets\Scripts\GameManagerScript.cs" Line="41" Column="1" />
-      <File FileName="Assets\Scripts\ObstacleSpawn.cs" Line="46" Column="1" />
-      <File FileName="Assets\ChunkCameraScript.cs" Line="9" Column="2" />
-      <File FileName="Assets\Scripts\MovementScript.cs" Line="122" Column="6" />
-      <File FileName="Assets\CheckScript.cs" Line="19" Column="1" />
+      <File FileName="Assets\Scripts\CameraControl.cs" Line="1" Column="1" />
+      <File FileName="Assets\Scripts\DestroyerScript.cs" Line="1" Column="1" />
+      <File FileName="Assets\Scripts\GameManagerScript.cs" Line="1" Column="1" />
+      <File FileName="Assets\Scripts\SpawnRiver.cs" Line="38" Column="145" />
     </Files>
   </MonoDevelop.Ide.Workbench>
   <MonoDevelop.Ide.DebuggingService.Breakpoints>
