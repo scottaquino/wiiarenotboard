@@ -61,6 +61,8 @@ MonoBehaviour:
   p2: {fileID: 0}
   p3: {fileID: 0}
   p4: {fileID: 0}
+  readyUp: {fileID: 0}
+  go: {fileID: 0}
   player1: {fileID: 0}
   player2: {fileID: 0}
   player3: {fileID: 0}
@@ -71,3 +73,4 @@ MonoBehaviour:
   - {fileID: 0}
   - {fileID: 0}
   - {fileID: 0}
+  isReady: 0

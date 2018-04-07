@@ -9,14 +9,22 @@ public class TitleManagerScript : MonoBehaviour {
 	public int playerCount = 2;
 	public Text numOfPlayers;
 
+	GameObject manager;
+
 	// Use this for initialization
 	void Start () {
 		DontDestroyOnLoad (this.gameObject);
+		manager = GameObject.Find ("GameManager");
+		if (manager) {
+			Destroy (manager);
+		}
 	}
 	
 	// Update is called once per frame
 	void Update () {
-		numOfPlayers.text = playerCount.ToString ();
+		if(numOfPlayers) {
+			numOfPlayers.text = playerCount.ToString ();
+		}
 	}
 
 	public void StartButton()

@@ -72,7 +72,7 @@ public class CameraControl : MonoBehaviour {
 	void Move()
 	{
 		Average ();
-		transform.position = Vector3.Lerp (startPos.position, new Vector3(avgX, avgY - moveSpeed), fracJourney);
+		transform.position = Vector3.Lerp (startPos.position, new Vector3(avgX, avgY - moveSpeed), fracJourney / 2.0f);
 		moveCounter++;
 	}
 

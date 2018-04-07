@@ -30,6 +30,7 @@ public class GameManagerScript : MonoBehaviour {
 		titleManager = GameObject.Find ("TitleManager");
 		if (titleManager) {
 			playerCount = titleManager.GetComponent<TitleManagerScript> ().playerCount;
+			Destroy (titleManager);
 		}
 		if(playerCount == 1)
 		{
