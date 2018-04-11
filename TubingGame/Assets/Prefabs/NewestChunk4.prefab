@@ -93,6 +93,24 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
+--- !u!1 &1386579460095290
+GameObject:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  serializedVersion: 5
+  m_Component:
+  - component: {fileID: 4233251965553478}
+  - component: {fileID: 50387788222835926}
+  - component: {fileID: 61783170047080700}
+  - component: {fileID: 114326612510452200}
+  m_Layer: 0
+  m_Name: RiverSpawn (2)
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
 --- !u!1 &1504821430333224
 GameObject:
   m_ObjectHideFlags: 0
@@ -215,6 +233,19 @@ Transform:
   m_Father: {fileID: 4592376229628528}
   m_RootOrder: 5
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!4 &4233251965553478
+Transform:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1386579460095290}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: -10.971878, y: -20.072536, z: -1}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 4592376229628528}
+  m_RootOrder: 10
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!4 &4266985965513110
 Transform:
   m_ObjectHideFlags: 1
@@ -274,7 +305,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1095698953024094}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 93.664635, y: -37.308483, z: 0}
+  m_LocalPosition: {x: 136.81187, y: -50.387463, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 4266985965513110}
@@ -287,6 +318,7 @@ Transform:
   - {fileID: 4583579543951054}
   - {fileID: 4323081720941130}
   - {fileID: 4279992455254064}
+  - {fileID: 4233251965553478}
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -342,6 +374,26 @@ Transform:
   m_Father: {fileID: 4592376229628528}
   m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!50 &50387788222835926
+Rigidbody2D:
+  serializedVersion: 4
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1386579460095290}
+  m_BodyType: 1
+  m_Simulated: 1
+  m_UseFullKinematicContacts: 0
+  m_UseAutoMass: 0
+  m_Mass: 1
+  m_LinearDrag: 0
+  m_AngularDrag: 0.05
+  m_GravityScale: 1
+  m_Material: {fileID: 0}
+  m_Interpolate: 0
+  m_SleepingMode: 1
+  m_CollisionDetection: 0
+  m_Constraints: 0
 --- !u!50 &50685344269290618
 Rigidbody2D:
   serializedVersion: 4
@@ -577,6 +629,31 @@ PolygonCollider2D:
       - {x: -5.010989, y: -20}
       - {x: 30.007326, y: -20}
       - {x: 30.007326, y: 20}
+--- !u!61 &61783170047080700
+BoxCollider2D:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1386579460095290}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 5, y: 15}
+  m_SpriteTilingProperty:
+    border: {x: 0, y: 0, z: 0, w: 0}
+    pivot: {x: 0, y: 0}
+    oldSize: {x: 0, y: 0}
+    newSize: {x: 0, y: 0}
+    adaptiveTilingThreshold: 0
+    drawMode: 0
+    adaptiveTiling: 0
+  m_AutoTiling: 0
+  serializedVersion: 2
+  m_Size: {x: 15, y: 1.2054863}
+  m_EdgeRadius: 0
 --- !u!114 &114194007546524228
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -601,6 +678,24 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   canSpawn: 00000001
+--- !u!114 &114326612510452200
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1386579460095290}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 44adfeb0f98e6a047b29e627f0811d07, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  riverBank:
+  - {fileID: 0}
+  - {fileID: 1762625289198994, guid: c3efe27205a384d45887ef2680288587, type: 2}
+  - {fileID: 1003350792127888, guid: 4ff9d3a933ee92148982076415dc1d38, type: 2}
+  - {fileID: 1095698953024094}
+  - {fileID: 1625724214997834, guid: a586c776d86fb2048a2eff214a6113f2, type: 2}
+  - {fileID: 1450003914437228, guid: a3ea9037f9e83ec4091be2b9eab4ae1c, type: 2}
 --- !u!114 &114420013941493810
 MonoBehaviour:
   m_ObjectHideFlags: 1
