@@ -703,7 +703,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   riverBank:
-  - {fileID: 0}
+  - {fileID: 1374961273239656, guid: 4a0cada6c08b51e48bcc8af343bf859d, type: 2}
   - {fileID: 1762625289198994, guid: c3efe27205a384d45887ef2680288587, type: 2}
   - {fileID: 1003350792127888}
   - {fileID: 1095698953024094, guid: 467ed5ac472bb9e4eb3c60b8de2f15b2, type: 2}
