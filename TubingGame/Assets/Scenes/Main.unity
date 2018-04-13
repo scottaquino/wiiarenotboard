@@ -532,6 +532,11 @@ Prefab:
       propertyPath: camera
       value: 
       objectReference: {fileID: 2073925204}
+    - target: {fileID: 114429543788881624, guid: c857e5515283b3a4d93415e3b3e15148,
+        type: 2}
+      propertyPath: coloredTrail
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: c857e5515283b3a4d93415e3b3e15148, type: 2}
   m_IsPrefabParent: 0
@@ -1125,6 +1130,11 @@ Prefab:
       propertyPath: camera
       value: 
       objectReference: {fileID: 2073925204}
+    - target: {fileID: 114068323390734178, guid: ea919b6e9db02944099721ac711ebc5d,
+        type: 2}
+      propertyPath: coloredTrail
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: ea919b6e9db02944099721ac711ebc5d, type: 2}
   m_IsPrefabParent: 0
@@ -1195,6 +1205,11 @@ Prefab:
     - target: {fileID: 212224532183715232, guid: 8f8f937014d747642bdb80230865ca8e,
         type: 2}
       propertyPath: m_Color.r
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 114591441690261104, guid: 8f8f937014d747642bdb80230865ca8e,
+        type: 2}
+      propertyPath: coloredTrail
       value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
@@ -1583,6 +1598,11 @@ Prefab:
     - target: {fileID: 1591364603188762, guid: a8214446a00b0734cb860e71a10d8612, type: 2}
       propertyPath: m_IsActive
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 114007311528384344, guid: a8214446a00b0734cb860e71a10d8612,
+        type: 2}
+      propertyPath: coloredTrail
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: a8214446a00b0734cb860e71a10d8612, type: 2}

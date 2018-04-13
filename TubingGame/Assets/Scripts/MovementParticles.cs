@@ -19,6 +19,7 @@ public class MovementParticles : MonoBehaviour
 	//Particle Variables
 	public int particleSpawns = 10;
 	public int baseParticles = 5;
+    public bool coloredTrail = true;
 	
 
 	private void Start()
@@ -35,12 +36,13 @@ public class MovementParticles : MonoBehaviour
 		pSystem2 = pSpawn2.GetComponent<ParticleSystem>();
 
 		//Particle System Colors, disable for normal blue
-		///*
-		var pMain1 = pSystem1.main;
-		var pMain2 = pSystem2.main;
-		pMain1.startColor = playerColor;
-		pMain2.startColor = playerColor;
-		//*/
+		if (coloredTrail)
+        {
+            var pMain1 = pSystem1.main;
+            var pMain2 = pSystem2.main;
+            pMain1.startColor = playerColor;
+            pMain2.startColor = playerColor;
+        }
 	}
 
 	private void Update()
