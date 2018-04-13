@@ -14,6 +14,13 @@ public class MovementScript : MonoBehaviour {
 	public float bounceControl = 0.1f;
 	bool bouncing = false;
 	bool isFirst = false;
+	public bool freeze = false;
+	public bool frozen = false;
+
+	public Sprite leanRight;
+	public Sprite leanLeft;
+	public Sprite centered;
+	public GameObject character;
 
 	public GameObject manager;
 	public GameObject camera;
@@ -50,11 +57,9 @@ public class MovementScript : MonoBehaviour {
 	{
 		// Get the input from the Rewired Player. All controllers that the Player owns will contribute, so it doesn't matter
 		// whether the input is coming from a joystick, the keyboard, mouse, or a custom controller.
-
-		if(!bouncing)
-		{
+		if (!bouncing) {
 			moveVector.y = player.GetAxis ("Vertical") * moveSpeed - gravity;
-			moveVector.x = player.GetAxis("Horizontal") * moveSpeed; // get input by name or action id
+			moveVector.x = player.GetAxis ("Horizontal") * moveSpeed; // get input by name or action id
 		}
 	}
 
@@ -78,6 +83,13 @@ public class MovementScript : MonoBehaviour {
 			}
 			gameObject.GetComponent<Rigidbody2D>().AddForce(moveVector * moveSpeed * firstPenalty);
 		} 
+		if (moveVector.x >= 1.0) {
+			character.GetComponent<SpriteRenderer> ().sprite = leanRight;
+		} else if (moveVector.x <= -1.0) {
+			character.GetComponent<SpriteRenderer> ().sprite = leanLeft;
+		} else {
+			character.GetComponent<SpriteRenderer> ().sprite = centered;
+		}
 	}
 
 	void OnCollisionEnter2D(Collision2D collision)

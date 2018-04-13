@@ -20,9 +20,11 @@ public class GameManagerScript : MonoBehaviour {
 
 	public List<GameObject> players = new List<GameObject>();
 
-	public bool isReady = false;
+	public bool isReady = true;
 	bool starting = false;
 	bool started = false;
+	public bool startLine = false;
+	public int playersStarting = 0;
 
 	// Use this for initialization
 	void Start () {
@@ -86,30 +88,24 @@ public class GameManagerScript : MonoBehaviour {
 			players.Add (player3);
 			players.Add (player4);
 		}
-
-		for(int i = 0; i < playerCount; i++)
-		{
-			players [i].GetComponent<Rigidbody2D> ().constraints = RigidbodyConstraints2D.FreezeAll;
-		}
 	}
 
 	void FixedUpdate()
 	{
-		if (!isReady) {
-			StartCoroutine(CountDown ());
-			for(int i = 0; i < playerCount; i++)
-			{
-				players [i].GetComponent<Rigidbody2D> ().constraints = RigidbodyConstraints2D.FreezeAll;
+		if(startLine)
+		{
+			if (!isReady) {
+				StartCoroutine(CountDown ());
 			}
-		}
-		if (starting) {
-			readyUp.gameObject.SetActive (true);
-			starting = false;
-		} else if (started) {
-			readyUp.gameObject.SetActive (false);
-			go.gameObject.SetActive (true);
-			started = false;
-			StartCoroutine (CountDown2 ());
+			if (starting) {
+				readyUp.gameObject.SetActive (true);
+				starting = false;
+			} else if (started) {
+				readyUp.gameObject.SetActive (false);
+				go.gameObject.SetActive (true);
+				started = false;
+				StartCoroutine (CountDown2 ());
+			}
 		}
 
 	}

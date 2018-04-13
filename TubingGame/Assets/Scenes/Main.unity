@@ -220,11 +220,11 @@ Prefab:
       propertyPath: m_RootOrder
       value: 9
       objectReference: {fileID: 0}
-    - target: {fileID: 60167006522559896, guid: f06c18f9fd337344cb1deaf7f367a8ff,
+    - target: {fileID: 114791346792811894, guid: f06c18f9fd337344cb1deaf7f367a8ff,
         type: 2}
-      propertyPath: m_Material
+      propertyPath: manager
       value: 
-      objectReference: {fileID: 6200000, guid: 14ea170dc37c4f7499ceb37e9fcb74af, type: 2}
+      objectReference: {fileID: 2069186442}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: f06c18f9fd337344cb1deaf7f367a8ff, type: 2}
   m_IsPrefabParent: 0
@@ -482,7 +482,7 @@ Transform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 450867793}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalPosition: {x: 0, y: -2.65, z: 0}
   m_LocalScale: {x: 0.75, y: 0.75, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
@@ -537,16 +537,6 @@ Prefab:
       propertyPath: camera
       value: 
       objectReference: {fileID: 2073925204}
-    - target: {fileID: 114429543788881624, guid: c857e5515283b3a4d93415e3b3e15148,
-        type: 2}
-      propertyPath: coloredTrail
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 114951353560190738, guid: c857e5515283b3a4d93415e3b3e15148,
-        type: 2}
-      propertyPath: moveSpeed
-      value: 12
-      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: c857e5515283b3a4d93415e3b3e15148, type: 2}
   m_IsPrefabParent: 0
@@ -1140,16 +1130,6 @@ Prefab:
       propertyPath: camera
       value: 
       objectReference: {fileID: 2073925204}
-    - target: {fileID: 114068323390734178, guid: ea919b6e9db02944099721ac711ebc5d,
-        type: 2}
-      propertyPath: coloredTrail
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 114526783734695706, guid: ea919b6e9db02944099721ac711ebc5d,
-        type: 2}
-      propertyPath: moveSpeed
-      value: 12
-      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: ea919b6e9db02944099721ac711ebc5d, type: 2}
   m_IsPrefabParent: 0
@@ -1207,31 +1187,6 @@ Prefab:
       propertyPath: camera
       value: 
       objectReference: {fileID: 2073925204}
-    - target: {fileID: 212224532183715232, guid: 8f8f937014d747642bdb80230865ca8e,
-        type: 2}
-      propertyPath: m_Color.g
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 212224532183715232, guid: 8f8f937014d747642bdb80230865ca8e,
-        type: 2}
-      propertyPath: m_Color.b
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 212224532183715232, guid: 8f8f937014d747642bdb80230865ca8e,
-        type: 2}
-      propertyPath: m_Color.r
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 114591441690261104, guid: 8f8f937014d747642bdb80230865ca8e,
-        type: 2}
-      propertyPath: coloredTrail
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 114132806773983798, guid: 8f8f937014d747642bdb80230865ca8e,
-        type: 2}
-      propertyPath: moveSpeed
-      value: 12
-      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 8f8f937014d747642bdb80230865ca8e, type: 2}
   m_IsPrefabParent: 0
@@ -1308,110 +1263,6 @@ CanvasRenderer:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1274897831}
---- !u!1 &1623562875
-GameObject:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 1386579460095290, guid: 467ed5ac472bb9e4eb3c60b8de2f15b2,
-    type: 2}
-  m_PrefabInternal: {fileID: 0}
-  serializedVersion: 5
-  m_Component:
-  - component: {fileID: 1623562879}
-  - component: {fileID: 1623562878}
-  - component: {fileID: 1623562877}
-  - component: {fileID: 1623562876}
-  m_Layer: 0
-  m_Name: RiverSpawn (2)
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!114 &1623562876
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 114326612510452200, guid: 467ed5ac472bb9e4eb3c60b8de2f15b2,
-    type: 2}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 1623562875}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 44adfeb0f98e6a047b29e627f0811d07, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  riverBank:
-  - {fileID: 1374961273239656, guid: 4a0cada6c08b51e48bcc8af343bf859d, type: 2}
-  - {fileID: 1762625289198994, guid: c3efe27205a384d45887ef2680288587, type: 2}
-  - {fileID: 1003350792127888, guid: 4ff9d3a933ee92148982076415dc1d38, type: 2}
-  - {fileID: 1095698953024094, guid: 467ed5ac472bb9e4eb3c60b8de2f15b2, type: 2}
-  - {fileID: 1625724214997834, guid: a586c776d86fb2048a2eff214a6113f2, type: 2}
-  - {fileID: 1450003914437228, guid: a3ea9037f9e83ec4091be2b9eab4ae1c, type: 2}
---- !u!61 &1623562877
-BoxCollider2D:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 61783170047080700, guid: 467ed5ac472bb9e4eb3c60b8de2f15b2,
-    type: 2}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 1623562875}
-  m_Enabled: 1
-  m_Density: 1
-  m_Material: {fileID: 0}
-  m_IsTrigger: 1
-  m_UsedByEffector: 0
-  m_UsedByComposite: 0
-  m_Offset: {x: 0.5, y: 12}
-  m_SpriteTilingProperty:
-    border: {x: 0, y: 0, z: 0, w: 0}
-    pivot: {x: 0, y: 0}
-    oldSize: {x: 0, y: 0}
-    newSize: {x: 0, y: 0}
-    adaptiveTilingThreshold: 0
-    drawMode: 0
-    adaptiveTiling: 0
-  m_AutoTiling: 0
-  serializedVersion: 2
-  m_Size: {x: 12.5, y: 1.2054863}
-  m_EdgeRadius: 0
---- !u!50 &1623562878
-Rigidbody2D:
-  serializedVersion: 4
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 50387788222835926, guid: 467ed5ac472bb9e4eb3c60b8de2f15b2,
-    type: 2}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 1623562875}
-  m_BodyType: 1
-  m_Simulated: 1
-  m_UseFullKinematicContacts: 0
-  m_UseAutoMass: 0
-  m_Mass: 1
-  m_LinearDrag: 0
-  m_AngularDrag: 0.05
-  m_GravityScale: 1
-  m_Material: {fileID: 0}
-  m_Interpolate: 0
-  m_SleepingMode: 1
-  m_CollisionDetection: 0
-  m_Constraints: 0
---- !u!4 &1623562879
-Transform:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 4233251965553478, guid: 467ed5ac472bb9e4eb3c60b8de2f15b2,
-    type: 2}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 1623562875}
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: -15, z: -1}
-  m_LocalScale: {x: 0.9852216, y: 1, z: 1}
-  m_Children: []
-  m_Father: {fileID: 1745485320}
-  m_RootOrder: 0
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!4 &1745485320 stripped
-Transform:
-  m_PrefabParentObject: {fileID: 4163510719242448, guid: f06c18f9fd337344cb1deaf7f367a8ff,
-    type: 2}
-  m_PrefabInternal: {fileID: 114473603}
 --- !u!1 &1862603193
 GameObject:
   m_ObjectHideFlags: 0
@@ -1489,11 +1340,11 @@ Prefab:
     m_Modifications:
     - target: {fileID: 4344191788049092, guid: 7810e2226328f8b40ad4ffec402f212f, type: 2}
       propertyPath: m_LocalPosition.x
-      value: 3.06
+      value: 0.04
       objectReference: {fileID: 0}
     - target: {fileID: 4344191788049092, guid: 7810e2226328f8b40ad4ffec402f212f, type: 2}
       propertyPath: m_LocalPosition.y
-      value: 0.92
+      value: 1.21
       objectReference: {fileID: 0}
     - target: {fileID: 4344191788049092, guid: 7810e2226328f8b40ad4ffec402f212f, type: 2}
       propertyPath: m_LocalPosition.z
@@ -1519,11 +1370,6 @@ Prefab:
       propertyPath: m_RootOrder
       value: 1
       objectReference: {fileID: 0}
-    - target: {fileID: 114032079167165178, guid: 7810e2226328f8b40ad4ffec402f212f,
-        type: 2}
-      propertyPath: manager
-      value: 
-      objectReference: {fileID: 2069186442}
     - target: {fileID: 114923550406851690, guid: 7810e2226328f8b40ad4ffec402f212f,
         type: 2}
       propertyPath: manager
@@ -1549,19 +1395,14 @@ Prefab:
       propertyPath: players.Array.data[3]
       value: 
       objectReference: {fileID: 1924630946}
+    - target: {fileID: 114032079167165178, guid: 7810e2226328f8b40ad4ffec402f212f,
+        type: 2}
+      propertyPath: manager
+      value: 
+      objectReference: {fileID: 2069186442}
     - target: {fileID: 1535911692604962, guid: 7810e2226328f8b40ad4ffec402f212f, type: 2}
       propertyPath: m_Name
       value: MainCamera
-      objectReference: {fileID: 0}
-    - target: {fileID: 114032079167165178, guid: 7810e2226328f8b40ad4ffec402f212f,
-        type: 2}
-      propertyPath: deathTimer
-      value: 500
-      objectReference: {fileID: 0}
-    - target: {fileID: 20817137822103546, guid: 7810e2226328f8b40ad4ffec402f212f,
-        type: 2}
-      propertyPath: near clip plane
-      value: -10
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 7810e2226328f8b40ad4ffec402f212f, type: 2}
@@ -1615,20 +1456,6 @@ Prefab:
       propertyPath: camera
       value: 
       objectReference: {fileID: 2073925204}
-    - target: {fileID: 1591364603188762, guid: a8214446a00b0734cb860e71a10d8612, type: 2}
-      propertyPath: m_IsActive
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 114007311528384344, guid: a8214446a00b0734cb860e71a10d8612,
-        type: 2}
-      propertyPath: coloredTrail
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 114107677175997038, guid: a8214446a00b0734cb860e71a10d8612,
-        type: 2}
-      propertyPath: moveSpeed
-      value: 12
-      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: a8214446a00b0734cb860e71a10d8612, type: 2}
   m_IsPrefabParent: 0
