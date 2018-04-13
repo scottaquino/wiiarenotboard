@@ -83,7 +83,11 @@ public class MovementScript : MonoBehaviour {
 	void OnCollisionEnter2D(Collision2D collision)
 	{
 		Debug.Log("COLLIDING");
-		StartCoroutine(Bounce(collision));
+		if (collision.gameObject.tag == "Player") {
+			StartCoroutine (Bounce (collision));
+		} else {
+			StartCoroutine (BounceObject (collision));
+		}
 	}
 
 	IEnumerator Bounce(Collision2D col)
@@ -98,6 +102,16 @@ public class MovementScript : MonoBehaviour {
 		moveVector.x = 0.0f;
 		moveVector.y = 0.0f;
 		yield return new WaitForSeconds(bounceControl);
+		bouncing = false;
+	}
+
+	IEnumerator BounceObject(Collision2D col)
+	{
+		bouncing = true;
+		gameObject.GetComponent<Rigidbody2D> ().AddForce (-moveVector);
+		moveVector.x = 0.0f;
+		moveVector.y = 0.0f;
+		yield return new WaitForSeconds(0.2f);
 		bouncing = false;
 	}
 
