@@ -51,6 +51,8 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+     <Compile Include="Assets\MinusButtonScript.cs" />
+     <Compile Include="Assets\PlusButtonScript.cs" />
      <Compile Include="Assets\Rewired\Extras\ControlMapper\Examples\ControlMapperDemo\Scripts\ControlMapperDemoMessage.cs" />
      <Compile Include="Assets\Rewired\Extras\ControlMapper\Scripts\ButtonInfo.cs" />
      <Compile Include="Assets\Rewired\Extras\ControlMapper\Scripts\CalibrationWindow.cs" />
@@ -100,7 +102,10 @@
      <Compile Include="Assets\Scripts\SpawnRiver.cs" />
      <Compile Include="Assets\Scripts\StartLineScript.cs" />
      <Compile Include="Assets\Scripts\TitleManagerScript.cs" />
+     <Compile Include="Assets\Scripts\TitleThemeScript.cs" />
      <Compile Include="Assets\Scripts\WinnerScript.cs" />
+     <Compile Include="Assets\StartButtonScript.cs" />
+     <Compile Include="Assets\TitleSelectScript.cs" />
      <None Include="Assets\Rewired\Extras\TouchControls\Shaders\ColorShift.shader" />
      <None Include="Assets\Rewired\Documentation\licences.txt" />
      <None Include="Assets\Rewired\Documentation\ReadMe.txt" />

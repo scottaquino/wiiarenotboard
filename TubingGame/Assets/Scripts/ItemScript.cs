@@ -34,7 +34,7 @@ public class ItemScript : MonoBehaviour {
 		if (col.gameObject.tag == "Player" && !paired) {
 			paired = true;
 			transform.SetParent (col.gameObject.transform);
-			gameObject.transform.position = new Vector3 (0, 0, -10);
+			//gameObject.transform.position = new Vector3 (0, 0, -10); //I think this was setting the position to the wrong area
 			itemParent = transform.parent.gameObject;
 		}
 	}

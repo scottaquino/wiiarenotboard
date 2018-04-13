@@ -66,7 +66,9 @@ public class MovementScript : MonoBehaviour {
 	void ProcessInput()
 	{
 		// Process movement
-		first = CheckFirst ();
+		if (manager) {
+			first = CheckFirst ();
+		}
 		if (first) {
 			firstPenalty = 0.75f;
 		} else {

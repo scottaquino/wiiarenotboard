@@ -8,6 +8,11 @@ public class TitleManagerScript : MonoBehaviour {
 
 	public int playerCount = 2;
 	public Text numOfPlayers;
+	public TextMesh numOfPlayersNew;
+	public GameObject player1;
+	public GameObject player2;
+	public GameObject player3;
+	public GameObject player4;
 
 	GameObject manager;
 
@@ -24,6 +29,28 @@ public class TitleManagerScript : MonoBehaviour {
 	void Update () {
 		if(numOfPlayers) {
 			numOfPlayers.text = playerCount.ToString ();
+			numOfPlayersNew.text = playerCount.ToString ();
+		}
+		if(playerCount == 2)
+		{
+			player1.gameObject.SetActive (true);
+			player2.gameObject.SetActive (true);
+			player3.gameObject.SetActive (false);
+			player4.gameObject.SetActive (false);
+		}
+		if(playerCount == 3)
+		{
+			player1.gameObject.SetActive (true);
+			player2.gameObject.SetActive (true);
+			player3.gameObject.SetActive (true);
+			player4.gameObject.SetActive (false);
+		}
+		if(playerCount == 4)
+		{
+			player1.gameObject.SetActive (true);
+			player2.gameObject.SetActive (true);
+			player3.gameObject.SetActive (true);
+			player4.gameObject.SetActive (true);
 		}
 	}
 
