@@ -17,6 +17,8 @@ public class ObstacleSpawn : MonoBehaviour {
 	
 	void LoadObstacles()
 	{
+		obstacles.Add (Resources.Load ("Branch") as GameObject);
+		obstacles.Add (Resources.Load ("SpareTube") as GameObject);
 		if(canSpawn[0])
 			obstacles.Add(Resources.Load("Rock") as GameObject);
 		else if(canSpawn[1])
@@ -29,9 +31,11 @@ public class ObstacleSpawn : MonoBehaviour {
 
 	void SpawnObstacle()
 	{
-		if (obstacles.Count == 4) {
-			Instantiate (obstacles [3], transform.position, Quaternion.identity);
-			return;
+		for (int i = 0; i < obstacles.Count; i++) {
+			if(obstacles[i] == Resources.Load("Log") as GameObject){
+				Instantiate (obstacles [i], transform.position, Quaternion.identity);
+				return;
+			}
 		}
 
 		int temp = Random.Range (0, 100);
@@ -39,12 +43,15 @@ public class ObstacleSpawn : MonoBehaviour {
 		if (temp <= 50) {
 			if (temp <= 30 && obstacles.Count >= 2) {
 				if (temp <= 20 && obstacles.Count >= 3) {
-					Instantiate (obstacles [Random.Range (0, 2)], transform.position, Quaternion.identity);
+					Instantiate (obstacles [Random.Range (2, 4)], transform.position, Quaternion.identity);
 				} else
-					Instantiate (obstacles [Random.Range (0, 1)], transform.position, Quaternion.identity);
+					Instantiate (obstacles [Random.Range (2, 3)], transform.position, Quaternion.identity);
 			} else
-				Instantiate (obstacles [0], transform.position, Quaternion.identity);
-		}
+				Instantiate (obstacles [2], transform.position, Quaternion.identity);
+		} else if(temp > 50 && temp < 90)
+			Instantiate (obstacles [0], transform.position, Quaternion.identity);
+		else
+			Instantiate (obstacles [1], transform.position, Quaternion.identity);
 	}
 }
 

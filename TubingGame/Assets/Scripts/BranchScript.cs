@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class ItemScript : MonoBehaviour {
+public class BranchScript : MonoBehaviour {
 
 	public bool paired = false;
 	GameObject itemParent;
@@ -43,9 +43,10 @@ public class ItemScript : MonoBehaviour {
 	{
 		transform.SetParent (null);
 		rb.bodyType = RigidbodyType2D.Dynamic;
-		rb.AddForce (Vector2.up * 100.0f);
+		rb.AddForce (Vector2.up * 120.0f);
 		yield return new WaitForSeconds (.25f);
+		GetComponent<BoxCollider2D> ().isTrigger = false;
 		rb.bodyType = RigidbodyType2D.Kinematic;
-		GetComponent<ItemScript> ().enabled = false;
+		GetComponent<BranchScript> ().enabled = false;
 	}
 }

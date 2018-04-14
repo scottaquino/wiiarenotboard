@@ -33,70 +33,61 @@ public class DestroyerScript : MonoBehaviour {
 		//Debug.Log (numPlayers);
 		if (col.gameObject.tag == "Player" && numPlayers > 1) {
 			//Debug.Log("HEY THERE");
-			if (col.gameObject.GetComponent<MovementScript>().playerId == 0)
-			{
-				manager.GetComponent<GameManagerScript> ().player1Win = false;
-				for(int i = 0; i < gameObject.GetComponentInParent<CameraControl> ().players.Count; i++)
-				{
-					if (gameObject.GetComponentInParent<CameraControl> ().players [i]) {
-						if(gameObject.GetComponentInParent<CameraControl> ().players[i].GetComponent<MovementScript>().playerId == 0)
-						{
-							gameObject.GetComponentInParent<CameraControl> ().players.RemoveAt (i);
+			if (!col.gameObject.GetComponent<MovementScript> ().hasSpare) {
+				if (col.gameObject.GetComponent<MovementScript> ().playerId == 0) {
+					manager.GetComponent<GameManagerScript> ().player1Win = false;
+					for (int i = 0; i < gameObject.GetComponentInParent<CameraControl> ().players.Count; i++) {
+						if (gameObject.GetComponentInParent<CameraControl> ().players [i]) {
+							if (gameObject.GetComponentInParent<CameraControl> ().players [i].GetComponent<MovementScript> ().playerId == 0) {
+								gameObject.GetComponentInParent<CameraControl> ().players.RemoveAt (i);
+							}
 						}
 					}
-				}
-				manager.GetComponent<GameManagerScript> ().p1.gameObject.SetActive (false);
-			}
-			else if (col.gameObject.GetComponent<MovementScript>().playerId == 1)
-			{
-				manager.GetComponent<GameManagerScript> ().player2Win = false;
-				for(int i = 0; i < gameObject.GetComponentInParent<CameraControl> ().players.Count; i++)
-				{
-					if (gameObject.GetComponentInParent<CameraControl> ().players [i]) {
-						if(gameObject.GetComponentInParent<CameraControl> ().players[i].GetComponent<MovementScript>().playerId == 1)
-						{
-							gameObject.GetComponentInParent<CameraControl> ().players.RemoveAt (i);
+					manager.GetComponent<GameManagerScript> ().p1.gameObject.SetActive (false);
+				} else if (col.gameObject.GetComponent<MovementScript> ().playerId == 1) {
+					manager.GetComponent<GameManagerScript> ().player2Win = false;
+					for (int i = 0; i < gameObject.GetComponentInParent<CameraControl> ().players.Count; i++) {
+						if (gameObject.GetComponentInParent<CameraControl> ().players [i]) {
+							if (gameObject.GetComponentInParent<CameraControl> ().players [i].GetComponent<MovementScript> ().playerId == 1) {
+								gameObject.GetComponentInParent<CameraControl> ().players.RemoveAt (i);
+							}
 						}
 					}
-				}
-				manager.GetComponent<GameManagerScript> ().p2.gameObject.SetActive (false);
-			}
-			else if (col.gameObject.GetComponent<MovementScript>().playerId == 2)
-			{
-				manager.GetComponent<GameManagerScript> ().player3Win = false;
-				for(int i = 0; i < gameObject.GetComponentInParent<CameraControl> ().players.Count; i++)
-				{
-					if (gameObject.GetComponentInParent<CameraControl> ().players [i]) {
-						if(gameObject.GetComponentInParent<CameraControl> ().players[i].GetComponent<MovementScript>().playerId == 2)
-						{
-							gameObject.GetComponentInParent<CameraControl> ().players.RemoveAt (i);
+					manager.GetComponent<GameManagerScript> ().p2.gameObject.SetActive (false);
+				} else if (col.gameObject.GetComponent<MovementScript> ().playerId == 2) {
+					manager.GetComponent<GameManagerScript> ().player3Win = false;
+					for (int i = 0; i < gameObject.GetComponentInParent<CameraControl> ().players.Count; i++) {
+						if (gameObject.GetComponentInParent<CameraControl> ().players [i]) {
+							if (gameObject.GetComponentInParent<CameraControl> ().players [i].GetComponent<MovementScript> ().playerId == 2) {
+								gameObject.GetComponentInParent<CameraControl> ().players.RemoveAt (i);
+							}
 						}
 					}
-				}
-				manager.GetComponent<GameManagerScript> ().p3.gameObject.SetActive (false);
-			}
-			else if (col.gameObject.GetComponent<MovementScript>().playerId == 3)
-			{
-				manager.GetComponent<GameManagerScript> ().player4Win = false;
-				for(int i = 0; i < gameObject.GetComponentInParent<CameraControl> ().players.Count; i++)
-				{
-					if (gameObject.GetComponentInParent<CameraControl> ().players [i]) {
-						if(gameObject.GetComponentInParent<CameraControl> ().players[i].GetComponent<MovementScript>().playerId == 3)
-						{
-							gameObject.GetComponentInParent<CameraControl> ().players.RemoveAt (i);
+					manager.GetComponent<GameManagerScript> ().p3.gameObject.SetActive (false);
+				} else if (col.gameObject.GetComponent<MovementScript> ().playerId == 3) {
+					manager.GetComponent<GameManagerScript> ().player4Win = false;
+					for (int i = 0; i < gameObject.GetComponentInParent<CameraControl> ().players.Count; i++) {
+						if (gameObject.GetComponentInParent<CameraControl> ().players [i]) {
+							if (gameObject.GetComponentInParent<CameraControl> ().players [i].GetComponent<MovementScript> ().playerId == 3) {
+								gameObject.GetComponentInParent<CameraControl> ().players.RemoveAt (i);
+							}
 						}
 					}
+					manager.GetComponent<GameManagerScript> ().p4.gameObject.SetActive (false);
 				}
-				manager.GetComponent<GameManagerScript> ().p4.gameObject.SetActive (false);
+				gameObject.GetComponentInParent<CameraControl> ().someoneDied = true;
+				Destroy (col.gameObject);
+				//Debug.Log ("WORKING???");
+				manager.GetComponent<GameManagerScript> ().playerCount--;
+				numPlayers--;
+				// Debug.Log(numPlayers);
+				if (numPlayers == 1)
+					EndGame ();
+			} else {
+				col.gameObject.GetComponent<MovementScript> ().hasSpare = false;
+				col.gameObject.GetComponent<Rigidbody2D> ().AddForce (Vector2.down * col.gameObject.GetComponent<MovementScript> ().maxSpeed * 2.0f);
 			}
-			gameObject.GetComponentInParent<CameraControl> ().someoneDied = true;
-			Destroy (col.gameObject);
-			//Debug.Log ("WORKING???");
-			manager.GetComponent<GameManagerScript>().playerCount--;
-			numPlayers--;
-			// Debug.Log(numPlayers);
-			if (numPlayers == 1)
-				EndGame ();
+			
 		}
 	}
 
