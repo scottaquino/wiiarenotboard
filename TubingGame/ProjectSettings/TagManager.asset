@@ -5,6 +5,8 @@ TagManager:
   serializedVersion: 2
   tags:
   - River
+  - Obstacle_Trigger
+  - Obstacle
   layers:
   - Default
   - TransparentFX
