@@ -13,7 +13,7 @@
       <File FileName="Assets\Scripts\CheckScript.cs" Line="1" Column="1" />
       <File FileName="Assets\Scripts\StartLineScript.cs" Line="1" Column="1" />
       <File FileName="Assets\Scripts\BranchScript.cs" Line="1" Column="1" />
-      <File FileName="Assets\Scripts\ObstacleSpawn.cs" Line="37" Column="12" />
+      <File FileName="Assets\Scripts\ObstacleSpawn.cs" Line="46" Column="46" />
       <File FileName="Assets\Scripts\MovementScript.cs" Line="1" Column="1" />
       <File FileName="Assets\Scripts\SpareTubeScript.cs" Line="1" Column="1" />
     </Files>

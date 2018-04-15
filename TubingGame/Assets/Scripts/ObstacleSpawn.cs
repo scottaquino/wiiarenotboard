@@ -41,8 +41,8 @@ public class ObstacleSpawn : MonoBehaviour {
 		int temp = Random.Range (0, 100);
 
 		if (temp <= 50) {
-			if (temp <= 30 && obstacles.Count >= 2) {
-				if (temp <= 20 && obstacles.Count >= 3) {
+			if (temp <= 30 && obstacles.Count >= 4) {
+				if (temp <= 20 && obstacles.Count >= 5) {
 					Instantiate (obstacles [Random.Range (2, 4)], transform.position, Quaternion.identity);
 				} else
 					Instantiate (obstacles [Random.Range (2, 3)], transform.position, Quaternion.identity);

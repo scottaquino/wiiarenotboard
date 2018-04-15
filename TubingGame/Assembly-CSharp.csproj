@@ -96,6 +96,8 @@
      <Compile Include="Assets\Scripts\CheckScript.cs" />
      <Compile Include="Assets\Scripts\DestroyerScript.cs" />
      <Compile Include="Assets\Scripts\GameManagerScript.cs" />
+     <Compile Include="Assets\Scripts\IndicatorScript.cs" />
+     <Compile Include="Assets\Scripts\IndicatorTrigger.cs" />
      <Compile Include="Assets\Scripts\MovementParticles.cs" />
      <Compile Include="Assets\Scripts\MovementScript.cs" />
      <Compile Include="Assets\Scripts\ObstacleSpawn.cs" />
