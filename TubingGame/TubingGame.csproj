@@ -225,8 +225,6 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Assets\MinusButtonScript.cs" />
-    <Compile Include="Assets\PlusButtonScript.cs" />
     <Compile Include="Assets\Rewired\Extras\ControlMapper\Examples\ControlMapperDemo\Scripts\ControlMapperDemoMessage.cs" />
     <Compile Include="Assets\Rewired\Extras\ControlMapper\Scripts\ButtonInfo.cs" />
     <Compile Include="Assets\Rewired\Extras\ControlMapper\Scripts\CalibrationWindow.cs" />
@@ -272,17 +270,19 @@
     <Compile Include="Assets\Scripts\GameManagerScript.cs" />
     <Compile Include="Assets\Scripts\IndicatorScript.cs" />
     <Compile Include="Assets\Scripts\IndicatorTrigger.cs" />
+    <Compile Include="Assets\Scripts\MinusButtonScript.cs" />
     <Compile Include="Assets\Scripts\MovementParticles.cs" />
     <Compile Include="Assets\Scripts\MovementScript.cs" />
     <Compile Include="Assets\Scripts\ObstacleSpawn.cs" />
+    <Compile Include="Assets\Scripts\PlusButtonScript.cs" />
     <Compile Include="Assets\Scripts\SpareTubeScript.cs" />
     <Compile Include="Assets\Scripts\SpawnRiver.cs" />
+    <Compile Include="Assets\Scripts\StartButtonScript.cs" />
     <Compile Include="Assets\Scripts\StartLineScript.cs" />
     <Compile Include="Assets\Scripts\TitleManagerScript.cs" />
+    <Compile Include="Assets\Scripts\TitleSelectScript.cs" />
     <Compile Include="Assets\Scripts\TitleThemeScript.cs" />
     <Compile Include="Assets\Scripts\WinnerScript.cs" />
-    <Compile Include="Assets\StartButtonScript.cs" />
-    <Compile Include="Assets\TitleSelectScript.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Assets\Rewired\Documentation\ReadMe.txt" />

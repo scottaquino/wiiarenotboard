@@ -8,21 +8,37 @@ public class IndicatorScript : MonoBehaviour
 	public GameObject target;
 	public GameObject minDistance;
 	public GameObject cam;
+	private SpriteRenderer sR;
+	private Color sRC;
 
 	//Locations
 	public float initialIndicatorOffset;
 	private Vector2 curPos;
 	private bool coroutineStarted = false;
+	public float destroyTime = 1.5f;
 
 	//Blinking
-	public float blinkSpeed;
+	private float blinkSpeed = 2;
+	public float blinkTime = 30;
+	private float blinkTimeRef;
+	private bool blinkAway = true;
 
 	private void Start()
 	{
+		//Get spriterenderer and color component
+		sR = this.GetComponent<SpriteRenderer>();
+		sRC = sR.color;
+
+		//Set target of indicator, find min distance
 		target = FindParentWithTag(this.gameObject, "Obstacle");
 		minDistance = FindMinDistance(this.gameObject, "Min_Distance");
+
+		//Find camera, set position of indicator
 		cam = GameObject.Find("MainCamera");
 		StartPosition();
+
+		//Set reference to blinkTime
+		blinkTimeRef = blinkTime;
 	}
 
 	//Returns Obstacle
@@ -61,15 +77,18 @@ public class IndicatorScript : MonoBehaviour
 		curPos = thisPos;
 	}
 
-	private void Update()
+	private void FixedUpdate()
 	{
 		SetPosition();
 		Blinking();
 	}
 
+	//Moves indicator
 	private void SetPosition()
 	{
 		curPos = this.transform.position;
+
+		//Starts destroy script for indicator
 		if (curPos.y <= minDistance.transform.position.y)
 		{
 			if (!coroutineStarted)
@@ -80,11 +99,13 @@ public class IndicatorScript : MonoBehaviour
 			}
 
 		}
-		else if (curPos.y >= cam.transform.position.y - 4.5f && curPos.y > minDistance.transform.position.y)
+
+		//Moves indicator with bottom of camera
+		else if (curPos.y >= cam.transform.position.y - 4.8f && curPos.y > minDistance.transform.position.y)
 		{
 			Vector2 newPos = new Vector2();
 			newPos.x = this.transform.position.x;
-			newPos.y = cam.transform.position.y - 4.5f;
+			newPos.y = cam.transform.position.y - 4.8f;
 
 			this.transform.position = newPos;
 			curPos = newPos;
@@ -93,12 +114,34 @@ public class IndicatorScript : MonoBehaviour
 
 	private void Blinking()
 	{
-		//null
+		if (blinkAway)
+		{
+			blinkTime -= blinkSpeed;
+			sRC = new Color(1f, 1f, 1f, (blinkTime / blinkTimeRef));
+			sR.color = sRC;
+
+			if (blinkTime <= 0) //Check for switch
+			{
+				blinkAway = !blinkAway;
+			}
+		}
+		else if (!blinkAway)
+		{
+			blinkTime += blinkSpeed;
+			sRC = new Color(1f, 1f, 1f, (blinkTime / blinkTimeRef));
+			sR.color = sRC;
+
+			if (blinkTime >= blinkTimeRef) //Check for switch
+			{
+				blinkAway = !blinkAway;
+			}
+		}
+
 	}
 
 	IEnumerator DestroyIndicator()
 	{
-		yield return new WaitForSeconds(1.5f);
+		yield return new WaitForSeconds(destroyTime);
 		Destroy(this.gameObject);
 	}
 }

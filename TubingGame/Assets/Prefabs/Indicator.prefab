@@ -54,8 +54,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   target: {fileID: 0}
   minDistance: {fileID: 0}
-  camera: {fileID: 0}
+  cam: {fileID: 0}
   initialIndicatorOffset: -6
+  destroyTime: 1.5
+  blinkTime: 30
 --- !u!212 &212255266680614512
 SpriteRenderer:
   m_ObjectHideFlags: 1
