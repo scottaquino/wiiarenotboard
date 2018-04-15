@@ -108,7 +108,7 @@ public class MovementScript : MonoBehaviour {
 	IEnumerator Bounce(Collision2D col)
 	{
 		Debug.Log("BOUNCING");
-		gameObject.GetComponent<Rigidbody2D>().AddForce(-moveVector * bounce/2 * moveSpeed); //bounce math for aggressor
+		//gameObject.GetComponent<Rigidbody2D>().AddForce(-moveVector * bounce/2 * moveSpeed); //bounce math for aggressor
 		col.gameObject.GetComponent<Rigidbody2D>().AddForce(moveVector * bounce * moveSpeed); //bounce math for person getting bumped
 
 		//Take away control of movement during bounce
