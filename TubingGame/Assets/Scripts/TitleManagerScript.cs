@@ -6,9 +6,8 @@ using UnityEngine.UI;
 
 public class TitleManagerScript : MonoBehaviour {
 
-	public int playerCount = 2;
-	public Text numOfPlayers;
-	public TextMesh numOfPlayersNew;
+	public int playerCount;
+	public GameObject numOfPlayersNew;
 	public GameObject player1;
 	public GameObject player2;
 	public GameObject player3;
@@ -27,10 +26,7 @@ public class TitleManagerScript : MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update () {
-		if(numOfPlayers) {
-			numOfPlayers.text = playerCount.ToString ();
-			numOfPlayersNew.text = playerCount.ToString ();
-		}
+		numOfPlayersNew.GetComponent<TextMesh>().text = playerCount.ToString ();
 		if(playerCount == 2)
 		{
 			player1.gameObject.SetActive (true);

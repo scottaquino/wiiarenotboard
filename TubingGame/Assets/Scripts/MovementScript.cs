@@ -52,6 +52,11 @@ public class MovementScript : MonoBehaviour {
 	void FixedUpdate () {
 		GetInput();
 		ProcessInput();
+		if (hasSpare) {
+			manager.GetComponent<GameManagerScript> ().spareTubes [playerId].gameObject.SetActive (true);
+		} else {
+			manager.GetComponent<GameManagerScript> ().spareTubes [playerId].gameObject.SetActive (false);
+		}
 	}
 
 	void GetInput()

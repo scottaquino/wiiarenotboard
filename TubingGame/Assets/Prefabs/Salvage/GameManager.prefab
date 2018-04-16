@@ -68,9 +68,12 @@ MonoBehaviour:
   player3: {fileID: 0}
   player4: {fileID: 0}
   camera: {fileID: 0}
+  spareTubes: []
   players:
   - {fileID: 0}
   - {fileID: 0}
   - {fileID: 0}
   - {fileID: 0}
   isReady: 0
+  startLine: 0
+  playersStarting: 0

@@ -21,6 +21,7 @@ GameObject:
   - component: {fileID: 4112356633519356}
   - component: {fileID: 212305758277446124}
   - component: {fileID: 60976015538576934}
+  - component: {fileID: 114240952680769186}
   m_Layer: 0
   m_Name: SpareTube
   m_TagString: Untagged
@@ -116,6 +117,17 @@ PolygonCollider2D:
       - {x: 0.375, y: -0.005}
       - {x: 0.074999996, y: -0.085}
       - {x: -0.185, y: -0.085}
+--- !u!114 &114240952680769186
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1468602944299910}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a8959c6fe2bc3cb4f869ce23199227a9, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!212 &212305758277446124
 SpriteRenderer:
   m_ObjectHideFlags: 1

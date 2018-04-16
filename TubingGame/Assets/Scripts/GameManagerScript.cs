@@ -17,6 +17,7 @@ public class GameManagerScript : MonoBehaviour {
 	public GameObject player3;
 	public GameObject player4;
 	public GameObject camera;
+	public List<Image> spareTubes;
 
 	public List<GameObject> players = new List<GameObject>();
 
