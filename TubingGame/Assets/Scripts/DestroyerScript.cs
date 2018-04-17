@@ -85,8 +85,7 @@ public class DestroyerScript : MonoBehaviour {
 					EndGame ();
 			} else {
 				col.gameObject.GetComponent<MovementScript> ().hasSpare = false;
-				col.gameObject.GetComponent<Transform> ().transform.position = new Vector3 (col.gameObject.GetComponent<Transform> ().transform.position.x, 
-					col.gameObject.GetComponent<Transform> ().transform.position.y - 5.0f, col.gameObject.GetComponent<Transform> ().transform.position.z);
+				col.gameObject.transform.position = GameObject.Find ("MainCamera").transform.position;
 			}
 			
 		}
