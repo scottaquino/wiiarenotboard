@@ -14,9 +14,10 @@ public class SpareTubeScript : MonoBehaviour {
 		
 	}
 
-	void OnTriggerEnter2D(Collider2D col)
+	void OnCollisionEnter2D(Collision2D col)
 	{
-		if (col.gameObject.tag == "Player") {
+		if (col.gameObject.tag == "Player" && !col.gameObject.GetComponent<MovementScript>().hasItem) {
+			col.gameObject.GetComponent<MovementScript> ().hasItem = true;
 			col.gameObject.GetComponent<MovementScript> ().hasSpare = true;
 			Destroy (gameObject);
 		}

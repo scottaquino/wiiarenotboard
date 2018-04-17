@@ -17,6 +17,7 @@ public class MovementScript : MonoBehaviour {
 	public bool freeze = false;
 	public bool frozen = false;
 	public bool hasSpare = false;
+	public bool hasItem = false;
 
 	public Sprite leanRight;
 	public Sprite leanLeft;

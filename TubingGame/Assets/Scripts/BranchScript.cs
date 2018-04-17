@@ -16,22 +16,27 @@ public class BranchScript : MonoBehaviour {
 	// Update is called once per frame
 	void Update () {
 		if (paired && Input.GetKeyDown(KeyCode.LeftShift) && itemParent.GetComponent<MovementScript>().playerId == 0) {
+			transform.parent.gameObject.GetComponent<MovementScript> ().hasItem = false;
 			StartCoroutine ("Throw");
 		}
 		if (paired && Input.GetKeyDown(KeyCode.RightShift) && itemParent.GetComponent<MovementScript>().playerId == 1) {
+			transform.parent.gameObject.GetComponent<MovementScript> ().hasItem = false;
 			StartCoroutine ("Throw");
 		}
 		if (paired && Input.GetKeyDown(KeyCode.Space) && itemParent.GetComponent<MovementScript>().playerId == 2) {
+			transform.parent.gameObject.GetComponent<MovementScript> ().hasItem = false;
 			StartCoroutine ("Throw");
 		}
 		if (paired && Input.GetKeyDown(KeyCode.RightControl) && itemParent.GetComponent<MovementScript>().playerId == 3) {
+			transform.parent.gameObject.GetComponent<MovementScript> ().hasItem = false;
 			StartCoroutine ("Throw");
 		}
 	}
 
 	void OnTriggerEnter2D(Collider2D col)
 	{
-		if (col.gameObject.tag == "Player" && !paired) {
+		if (col.gameObject.tag == "Player" && !paired && !col.gameObject.GetComponent<MovementScript>().hasItem) {
+			col.gameObject.GetComponent<MovementScript> ().hasItem = true;
 			paired = true;
 			transform.SetParent (col.gameObject.transform);
 			//gameObject.transform.position = new Vector3 (0, 0, -10); //I think this was setting the position to the wrong area
