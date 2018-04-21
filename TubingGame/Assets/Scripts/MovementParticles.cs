@@ -13,8 +13,10 @@ public class MovementParticles : MonoBehaviour
 	//Particle Components
 	private GameObject pSpawn1;
 	private GameObject pSpawn2;
+	private GameObject pSpawn3;
 	private ParticleSystem pSystem1;
 	private ParticleSystem pSystem2;
+	private ParticleSystem pSystem3;
 
 	//Particle Variables
 	public int particleSpawns = 10;
@@ -32,16 +34,20 @@ public class MovementParticles : MonoBehaviour
 		//Populate components
 		pSpawn1 = this.transform.Find("ParticleSpawn1").gameObject;
 		pSpawn2 = this.transform.Find("ParticleSpawn2").gameObject;
+		pSpawn3 = this.transform.Find("ParticleSpawn3").gameObject;
 		pSystem1 = pSpawn1.GetComponent<ParticleSystem>();
 		pSystem2 = pSpawn2.GetComponent<ParticleSystem>();
+		pSystem3 = pSpawn3.GetComponent<ParticleSystem>();
 
 		//Particle System Colors, disable for normal blue
 		if (coloredTrail)
         {
             var pMain1 = pSystem1.main;
             var pMain2 = pSystem2.main;
+			var pMain3 = pSystem3.main;
             pMain1.startColor = playerColor;
             pMain2.startColor = playerColor;
+			pMain3.startColor = playerColor;
         }
 	}
 
@@ -53,10 +59,12 @@ public class MovementParticles : MonoBehaviour
 		//Define emissions as local variable
 		var emission1 = pSystem1.emission;
 		var emission2 = pSystem2.emission;
+		var emission3 = pSystem2.emission;
 
 		//Change emission rate to reflect player speed
 		emission1.rateOverTime = playerVelocity * Mathf.Floor(particleSpawns) + baseParticles;
 		emission2.rateOverTime = playerVelocity * Mathf.Floor(particleSpawns) + baseParticles;
+		emission3.rateOverTime = playerVelocity * Mathf.Floor(particleSpawns) + baseParticles;
 	}
 
 }

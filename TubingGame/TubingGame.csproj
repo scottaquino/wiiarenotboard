@@ -282,6 +282,7 @@
     <Compile Include="Assets\Scripts\TitleManagerScript.cs" />
     <Compile Include="Assets\Scripts\TitleSelectScript.cs" />
     <Compile Include="Assets\Scripts\TitleThemeScript.cs" />
+    <Compile Include="Assets\Scripts\WhirlpoolScript.cs" />
     <Compile Include="Assets\Scripts\WinnerScript.cs" />
   </ItemGroup>
   <ItemGroup>
