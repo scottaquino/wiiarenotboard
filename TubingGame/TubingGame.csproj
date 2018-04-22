@@ -276,9 +276,11 @@
     <Compile Include="Assets\Scripts\ObstacleSpawn.cs" />
     <Compile Include="Assets\Scripts\PlusButtonScript.cs" />
     <Compile Include="Assets\Scripts\SpareTubeScript.cs" />
+    <Compile Include="Assets\Scripts\SpawnManagement.cs" />
     <Compile Include="Assets\Scripts\SpawnRiver.cs" />
     <Compile Include="Assets\Scripts\StartButtonScript.cs" />
     <Compile Include="Assets\Scripts\StartLineScript.cs" />
+    <Compile Include="Assets\Scripts\TimeManagement.cs" />
     <Compile Include="Assets\Scripts\TitleManagerScript.cs" />
     <Compile Include="Assets\Scripts\TitleSelectScript.cs" />
     <Compile Include="Assets\Scripts\TitleThemeScript.cs" />
