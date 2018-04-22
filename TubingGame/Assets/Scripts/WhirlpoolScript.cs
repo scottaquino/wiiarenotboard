@@ -22,7 +22,7 @@ public class WhirlpoolScript : MonoBehaviour {
 
 	private IEnumerator PushAway()
 	{
-		yield return new WaitForSeconds (.5f);
+		yield return new WaitForSeconds (1.0f);
 		GetComponent<PointEffector2D> ().forceMagnitude = 150.0f;
 		yield return new WaitForSeconds (2.0f);
 		GetComponent<PointEffector2D> ().forceMagnitude = -25.0f;

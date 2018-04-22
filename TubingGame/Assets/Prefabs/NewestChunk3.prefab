@@ -38,6 +38,7 @@ GameObject:
   - component: {fileID: 212094360965673984}
   - component: {fileID: 60190601982262676}
   - component: {fileID: 50203068459745664}
+  - component: {fileID: 114056049835570306}
   m_Layer: 0
   m_Name: NewestChunk3
   m_TagString: Untagged
@@ -619,6 +620,19 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 16, y: 1.2054863}
   m_EdgeRadius: 0
+--- !u!114 &114056049835570306
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1003350792127888}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f2619e73bf341c042b3f1d2d4cbbdf52, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  numObstacles: 0
+  numItems: 0
 --- !u!114 &114073808548121012
 MonoBehaviour:
   m_ObjectHideFlags: 1

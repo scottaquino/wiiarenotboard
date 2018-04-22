@@ -104,6 +104,7 @@ GameObject:
   - component: {fileID: 212295289689325610}
   - component: {fileID: 50766952953873794}
   - component: {fileID: 60223030722910666}
+  - component: {fileID: 114238542767751064}
   m_Layer: 0
   m_Name: NewestChunk1
   m_TagString: Untagged
@@ -798,6 +799,19 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   canSpawn: 01010100
+--- !u!114 &114238542767751064
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1374961273239656}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f2619e73bf341c042b3f1d2d4cbbdf52, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  numObstacles: 0
+  numItems: 0
 --- !u!114 &114241148562091552
 MonoBehaviour:
   m_ObjectHideFlags: 1
