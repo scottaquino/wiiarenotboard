@@ -15,19 +15,19 @@ public class BranchScript : MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update () {
-		if (paired && Input.GetKeyDown(KeyCode.LeftShift) && itemParent.GetComponent<MovementScript>().playerId == 0) {
+		if (paired && Input.GetKey(KeyCode.S) && itemParent.GetComponent<MovementScript>().playerId == 0) {
 			transform.parent.gameObject.GetComponent<MovementScript> ().hasItem = false;
 			StartCoroutine ("Throw");
 		}
-		if (paired && Input.GetKeyDown(KeyCode.RightShift) && itemParent.GetComponent<MovementScript>().playerId == 1) {
+		if (paired && Input.GetKey(KeyCode.K) && itemParent.GetComponent<MovementScript>().playerId == 1) {
 			transform.parent.gameObject.GetComponent<MovementScript> ().hasItem = false;
 			StartCoroutine ("Throw");
 		}
-		if (paired && Input.GetKeyDown(KeyCode.Space) && itemParent.GetComponent<MovementScript>().playerId == 2) {
+		if (paired && Input.GetKey(KeyCode.DownArrow) && itemParent.GetComponent<MovementScript>().playerId == 2) {
 			transform.parent.gameObject.GetComponent<MovementScript> ().hasItem = false;
 			StartCoroutine ("Throw");
 		}
-		if (paired && Input.GetKeyDown(KeyCode.RightControl) && itemParent.GetComponent<MovementScript>().playerId == 3) {
+		if (paired && Input.GetKey(KeyCode.Keypad5) && itemParent.GetComponent<MovementScript>().playerId == 3) {
 			transform.parent.gameObject.GetComponent<MovementScript> ().hasItem = false;
 			StartCoroutine ("Throw");
 		}
@@ -46,6 +46,7 @@ public class BranchScript : MonoBehaviour {
 
 	IEnumerator Throw()
 	{
+		paired = false;
 		transform.SetParent (null);
 		rb.bodyType = RigidbodyType2D.Dynamic;
 		rb.AddForce (Vector2.up * 120.0f);

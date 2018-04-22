@@ -19,6 +19,7 @@ public class SpareTubeScript : MonoBehaviour {
 		if (col.gameObject.tag == "Player" && !col.gameObject.GetComponent<MovementScript>().hasItem) {
 			col.gameObject.GetComponent<MovementScript> ().hasItem = true;
 			col.gameObject.GetComponent<MovementScript> ().hasSpare = true;
+			col.gameObject.GetComponent<MovementScript> ().spareTube.gameObject.SetActive (true);
 			Destroy (gameObject);
 		}
 	}

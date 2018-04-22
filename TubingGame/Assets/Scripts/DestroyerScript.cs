@@ -85,7 +85,9 @@ public class DestroyerScript : MonoBehaviour {
 					EndGame ();
 			} else {
 				col.gameObject.GetComponent<MovementScript> ().hasSpare = false;
+				col.gameObject.GetComponent<MovementScript> ().spareTube.gameObject.SetActive (false);
 				col.gameObject.transform.position = GameObject.Find ("MainCamera").transform.position;
+				StartCoroutine (Invincible(col));
 			}
 			
 		}
@@ -100,5 +102,24 @@ public class DestroyerScript : MonoBehaviour {
 	{
 		yield return new WaitForSeconds (deathTimer);
 		katrina = true;
+	}
+
+	IEnumerator Invincible(Collider2D col)
+	{
+		Color tmp = col.gameObject.GetComponent<SpriteRenderer> ().color;
+		tmp.a = 0.5f;
+		col.gameObject.GetComponent<SpriteRenderer> ().color = tmp;
+		tmp = col.gameObject.GetComponent<MovementScript> ().character.gameObject.GetComponent<SpriteRenderer> ().color;
+		tmp.a = 0.5f;
+		col.gameObject.GetComponent<MovementScript> ().character.gameObject.GetComponent<SpriteRenderer> ().color = tmp;
+		col.gameObject.GetComponent<PolygonCollider2D> ().enabled = !col.gameObject.GetComponent<PolygonCollider2D> ().enabled;
+		yield return new WaitForSeconds (2.0f);
+		tmp = col.gameObject.GetComponent<SpriteRenderer> ().color;
+		tmp.a = 1.0f;
+		col.gameObject.GetComponent<SpriteRenderer> ().color = tmp;
+		tmp = col.gameObject.GetComponent<MovementScript> ().character.gameObject.GetComponent<SpriteRenderer> ().color;
+		tmp.a = 1.0f;
+		col.gameObject.GetComponent<MovementScript> ().character.gameObject.GetComponent<SpriteRenderer> ().color = tmp;
+		col.gameObject.GetComponent<PolygonCollider2D> ().enabled = !col.gameObject.GetComponent<PolygonCollider2D> ().enabled;
 	}
 }

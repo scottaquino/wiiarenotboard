@@ -26,6 +26,7 @@ public class GameManagerScript : MonoBehaviour {
 	bool started = false;
 	public bool startLine = false;
 	public int playersStarting = 0;
+	public bool gucci = false;
 
 	// Use this for initialization
 	void Start () {
@@ -106,6 +107,7 @@ public class GameManagerScript : MonoBehaviour {
 				go.gameObject.SetActive (true);
 				started = false;
 				StartCoroutine (CountDown2 ());
+				gucci = true;
 			}
 		}
 
