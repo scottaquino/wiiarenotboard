@@ -35,7 +35,7 @@ public class BranchScript : MonoBehaviour {
 
 	void OnTriggerEnter2D(Collider2D col)
 	{
-		if (col.gameObject.tag == "Player" && !paired && !col.gameObject.GetComponent<MovementScript>().hasItem) {
+		if (col.gameObject.tag == "Player" && !paired && !col.gameObject.GetComponent<MovementScript> ().hasItem && !col.gameObject.GetComponent<MovementScript> ().hasSpare) {
 			col.gameObject.GetComponent<MovementScript> ().hasItem = true;
 			paired = true;
 			transform.SetParent (col.gameObject.transform);
@@ -51,7 +51,7 @@ public class BranchScript : MonoBehaviour {
 		rb.bodyType = RigidbodyType2D.Dynamic;
 		rb.AddForce (Vector2.up * 120.0f);
 		yield return new WaitForSeconds (.25f);
-		GetComponent<BoxCollider2D> ().isTrigger = false;
+		GetComponent<PolygonCollider2D> ().isTrigger = false;
 		rb.bodyType = RigidbodyType2D.Kinematic;
 		GetComponent<BranchScript> ().enabled = false;
 	}

@@ -41,14 +41,14 @@ public class ObstacleSpawn : MonoBehaviour {
 	{
 		obstacles.Add (Resources.Load ("Branch") as GameObject);
 		obstacles.Add (Resources.Load ("SpareTube") as GameObject);
-		if(canSpawn[0])
-			obstacles.Add(Resources.Load("Rock") as GameObject);
-		else if(canSpawn[1])
-			obstacles.Add(Resources.Load("Whirlpool") as GameObject);
-		else if(canSpawn[2])
-			obstacles.Add(Resources.Load("Gator") as GameObject);
-		else if(canSpawn[3])
-			obstacles.Add(Resources.Load("Log") as GameObject);
+		if (canSpawn [0])
+			obstacles.Add (Resources.Load ("Rock") as GameObject);
+		else if (canSpawn [1])
+			obstacles.Add (Resources.Load ("Whirlpool") as GameObject);
+		else if (canSpawn [2])
+			obstacles.Add (Resources.Load ("Gator") as GameObject);
+		else if (canSpawn [3])
+			obstacles.Add (Resources.Load ("Log") as GameObject);
 	}
 
 	void SpawnObstacle()

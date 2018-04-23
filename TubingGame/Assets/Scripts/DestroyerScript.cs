@@ -92,6 +92,7 @@ public class DestroyerScript : MonoBehaviour {
 					EndGame ();
 			} else {
 				col.gameObject.GetComponent<MovementScript> ().hasSpare = false;
+				col.gameObject.GetComponent<MovementScript> ().hasItem = false;
 				col.gameObject.GetComponent<MovementScript> ().spareTube.gameObject.SetActive (false);
 				col.gameObject.transform.position = GameObject.Find ("MainCamera").transform.position;
 				StartCoroutine (Invincible(col));

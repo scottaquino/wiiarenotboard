@@ -19,6 +19,7 @@ public class MovementScript : MonoBehaviour {
 	public bool hasSpare = false;
 	public bool hasItem = false;
 	public float leanDegree = 15f;
+	public float catchUpSpeed;
 
 	public Sprite leanRight;
 	public Sprite leanLeft;
@@ -70,8 +71,7 @@ public class MovementScript : MonoBehaviour {
 		if (!manager.GetComponent<GameManagerScript> ().gucci) {
 			moveVector.y = player.GetAxis ("Vertical") * moveSpeed;
 			moveVector.x = player.GetAxis ("Horizontal") * moveSpeed; // get input by name or action id
-		}
-		else if (!bouncing) {
+		} else if (!bouncing) {
 			//moveVector.y = player.GetAxis ("Vertical") * moveSpeed - gravity;
 			moveVector.y = -gravity;
 			moveVector.x = player.GetAxis ("Horizontal") * moveSpeed; // get input by name or action id
@@ -85,7 +85,7 @@ public class MovementScript : MonoBehaviour {
 			first = CheckFirst ();
 		}
 		if (first) {
-			firstPenalty = 0.75f;
+			firstPenalty = catchUpSpeed;
 		} else {
 			firstPenalty = 1.0f;
 		}

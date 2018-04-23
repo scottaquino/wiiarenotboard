@@ -109,6 +109,7 @@ GameObject:
   - component: {fileID: 60815460447001288}
   - component: {fileID: 114391657136691876}
   - component: {fileID: 114591441690261104}
+  - component: {fileID: 82226313363133466}
   m_Layer: 0
   m_Name: Player2
   m_TagString: Player
@@ -162,7 +163,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1950132657019748}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 6.24, y: 3.78, z: 0}
+  m_LocalPosition: {x: -6.8, y: 3.5, z: 0}
   m_LocalScale: {x: 0.3643672, y: 0.4401808, z: 1}
   m_Children:
   - {fileID: 4249706546119036}
@@ -193,8 +194,8 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1919368018493296}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -0.10732372, y: 0.9507597, z: 0}
-  m_LocalScale: {x: 0.72853214, y: 0.64079475, z: 1}
+  m_LocalPosition: {x: -0.035, y: 1.36, z: 0}
+  m_LocalScale: {x: 0.51872706, y: 0.40917137, z: 1}
   m_Children: []
   m_Father: {fileID: 4342231066961702}
   m_RootOrder: 1
@@ -369,6 +370,86 @@ PolygonCollider2D:
       - {x: 0.375, y: -0.005}
       - {x: 0.074999996, y: -0.085}
       - {x: -0.185, y: -0.085}
+--- !u!82 &82226313363133466
+AudioSource:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1950132657019748}
+  m_Enabled: 1
+  serializedVersion: 4
+  OutputAudioMixerGroup: {fileID: 0}
+  m_audioClip: {fileID: 8300000, guid: 4c8e97176632ce84e970b296a740c407, type: 3}
+  m_PlayOnAwake: 0
+  m_Volume: 0.163
+  m_Pitch: 2
+  Loop: 0
+  Mute: 0
+  Spatialize: 0
+  SpatializePostEffects: 0
+  Priority: 0
+  DopplerLevel: 1
+  MinDistance: 1
+  MaxDistance: 500
+  Pan2D: 0
+  rolloffMode: 0
+  BypassEffects: 0
+  BypassListenerEffects: 0
+  BypassReverbZones: 0
+  rolloffCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 2
+      time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+    - serializedVersion: 2
+      time: 1
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  panLevelCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 2
+      time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 0
+  spreadCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 2
+      time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 0
+  reverbZoneMixCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 2
+      time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 0
 --- !u!114 &114132806773983798
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -391,8 +472,8 @@ MonoBehaviour:
   hasSpare: 0
   hasItem: 0
   leanDegree: 15
-  leanRight: {fileID: 21300000, guid: f0215a68886eaee49a1c6ad3baa6261c, type: 3}
-  leanLeft: {fileID: 21300000, guid: ddf6da1621e11ec4aab751d5792b5e89, type: 3}
+  leanRight: {fileID: 21300000, guid: 97e7d16c9f13e6a45ad020ac980c8d9c, type: 3}
+  leanLeft: {fileID: 21300000, guid: 97e7d16c9f13e6a45ad020ac980c8d9c, type: 3}
   centered: {fileID: 21300000, guid: 97e7d16c9f13e6a45ad020ac980c8d9c, type: 3}
   character: {fileID: 1919368018493296}
   manager: {fileID: 0}
@@ -10758,7 +10839,7 @@ SpriteRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 1
   m_Sprite: {fileID: 21300000, guid: 97e7d16c9f13e6a45ad020ac980c8d9c, type: 3}
-  m_Color: {r: 1, g: 0.5514706, b: 0.5514706, a: 1}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
