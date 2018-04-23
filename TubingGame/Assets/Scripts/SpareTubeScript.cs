@@ -14,13 +14,22 @@ public class SpareTubeScript : MonoBehaviour {
 		
 	}
 
-	void OnCollisionEnter2D(Collision2D col)
+	void OnTriggerEnter2D(Collider2D col)
 	{
-		if (col.gameObject.tag == "Player" && !col.gameObject.GetComponent<MovementScript>().hasItem) {
+		if (col.gameObject.tag == "Player" && !col.gameObject.GetComponent<MovementScript> ().hasItem) {
 			col.gameObject.GetComponent<MovementScript> ().hasItem = true;
 			col.gameObject.GetComponent<MovementScript> ().hasSpare = true;
 			col.gameObject.GetComponent<MovementScript> ().spareTube.gameObject.SetActive (true);
 			Destroy (gameObject);
+		} else if (col.gameObject.tag == "Player" && col.gameObject.GetComponent<MovementScript> ().hasItem) {
+			StartCoroutine ("Bounce");
 		}
+	}
+
+	private IEnumerator Bounce()
+	{
+		GetComponent<PolygonCollider2D> ().isTrigger = false;
+		yield return new WaitForSeconds (.5f);
+		GetComponent<PolygonCollider2D> ().isTrigger = true;
 	}
 }

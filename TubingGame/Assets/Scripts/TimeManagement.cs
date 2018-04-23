@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class TimeManagement : MonoBehaviour {
 
-	public float timePassed = 0.0f;
+	public int timePassed = 0;
 
 	// Use this for initialization
 	void Start () {
@@ -13,6 +13,6 @@ public class TimeManagement : MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update () {
-		timePassed += Time.deltaTime;
+		timePassed += Mathf.FloorToInt(Time.deltaTime);
 	}
 }

@@ -8,7 +8,7 @@ public class ObstacleSpawn : MonoBehaviour {
 	[Header("Rock, Whirlpool, Gator, Log Spawn")]
 	public List<bool> canSpawn;
 
-	float time;
+	int time;
 	float obstacleChance = .2f;
 	float itemChance = .2f;
 	int numZones = 0;
@@ -31,8 +31,8 @@ public class ObstacleSpawn : MonoBehaviour {
 	void AdjustChance ()
 	{
 		time = GameObject.Find ("GameManager").GetComponent<TimeManagement> ().timePassed;
-		obstacleChance += (time % 15.0f) * 4.0f;
-		itemChance += (time % 15.0f) * 2.0f;
+		obstacleChance += Mathf.Floor((time / 15.0f) * 4.0f);
+		itemChance += Mathf.Floor((time / 15.0f) * 2.0f);
 		obsToSpawn = (float)numZones * obstacleChance;
 		itemsToSpawn = (float)numZones * itemChance;
 	}
@@ -65,10 +65,10 @@ public class ObstacleSpawn : MonoBehaviour {
 		if (temp <= 50 && numObsSpawned < obsToSpawn) {
 			if (temp <= 30 && obstacles.Count >= 4) {
 				if (temp <= 20 && obstacles.Count >= 5) {
-					Instantiate (obstacles [Random.Range (2, 4)], transform.position, Quaternion.identity);
+					Instantiate (obstacles [4], transform.position, Quaternion.identity);
 					transform.parent.gameObject.GetComponent<SpawnManagement> ().numObstacles++;
 				} else {
-					Instantiate (obstacles [Random.Range (2, 3)], transform.position, Quaternion.identity);
+					Instantiate (obstacles [3], transform.position, Quaternion.identity);
 					transform.parent.gameObject.GetComponent<SpawnManagement> ().numObstacles++;
 				}
 			} else {
