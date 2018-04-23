@@ -12,16 +12,23 @@ public class TitleManagerScript : MonoBehaviour {
 	public GameObject player2;
 	public GameObject player3;
 	public GameObject player4;
+	public GameObject[] buttons;
+	GameObject current;
+	int index = 1;
+	public GameObject pointer;
+	public GameObject startingStuff;
 
-	GameObject manager;
+	public GameObject manager;
 
 	// Use this for initialization
 	void Start () {
 		DontDestroyOnLoad (this.gameObject);
-		manager = GameObject.Find ("GameManager");
-		if (manager) {
-			Destroy (manager);
-		}
+		startingStuff.gameObject.SetActive (true);
+		//if (manager) {
+			//Destroy (manager);
+		//}
+		index = 0;
+		current = buttons [index];
 	}
 	
 	// Update is called once per frame
@@ -48,11 +55,37 @@ public class TitleManagerScript : MonoBehaviour {
 			player3.gameObject.SetActive (true);
 			player4.gameObject.SetActive (true);
 		}
+		if (Input.GetKeyDown (KeyCode.A) && index > 0)
+		{
+			current = buttons [--index];
+			//Debug.Log ("AAAAAAAAAAAAA");
+		}
+		if(Input.GetKeyDown (KeyCode.D) && index < 2)
+		{
+			current = buttons[++index];
+		}
+		if(Input.GetKeyDown (KeyCode.S))
+		{
+			switch(index)
+			{
+			case 0:
+				RemovePlayers ();
+				break;
+			case 1:
+				StartButton ();
+				break;
+			case 2:
+				AddPlayers ();
+				break;
+			}
+		}
+		pointer.gameObject.transform.position = new Vector3 (current.gameObject.transform.position.x, 
+			current.gameObject.transform.position.y + 1.0f, current.gameObject.transform.position.z);
 	}
 
 	public void StartButton()
 	{
-		SceneManager.LoadScene ("Main");
+		startingStuff.gameObject.SetActive (false);
 	}
 
 	public void AddPlayers()

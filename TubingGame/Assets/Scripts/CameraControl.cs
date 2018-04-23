@@ -29,7 +29,6 @@ public class CameraControl : MonoBehaviour {
 
 	public List<GameObject> players = new List<GameObject>();
 
-
 	// Use this for initialization
 	void Start () {
 		moveDirection = new Vector3 (0f, 1f, 0f);
@@ -39,6 +38,7 @@ public class CameraControl : MonoBehaviour {
 
 	// Update is called once per frame
 	void FixedUpdate () {
+		if(manager.GetComponent<GameManagerScript>().gucci){
 		if (!someoneDied) {
 			Average ();
 			transform.position = new Vector3 (avgX, avgY - moveSpeed);
@@ -59,6 +59,7 @@ public class CameraControl : MonoBehaviour {
 		}
 		if (!destroyer.GetComponent<DestroyerScript> ().katrina) {
 			destroyer.transform.position = transform.position;
+		}
 		}
 	}
 
@@ -113,6 +114,7 @@ public class CameraControl : MonoBehaviour {
 		for (int i = 0; i < manager.GetComponent<GameManagerScript> ().playerCount; i++) {
 			if(players[i].GetComponent<MovementScript>().first) {
 				avgY += players[i].transform.position.y * 2.0f;
+				break;
 			}
 		}
 		avgY /= manager.GetComponent<GameManagerScript> ().playerCount + 2.0f;

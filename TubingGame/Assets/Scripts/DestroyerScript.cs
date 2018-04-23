@@ -10,16 +10,23 @@ public class DestroyerScript : MonoBehaviour {
 	public bool katrina = false;
 	public float stormSpeed;
 	public GameObject manager;
+	public GameObject titleManager;
+	public bool startingGame = false;
 
 	// Use this for initialization
 	void Start () {
-		StartCoroutine (CatchUp());
 		numPlayers = manager.GetComponent<GameManagerScript>().playerCount;
 
 	}
 
 	// Update is called once per frame
 	void FixedUpdate () {
+		if (startingGame)
+		{
+			StartCoroutine (CatchUp());
+			startingGame = false;
+			numPlayers = manager.GetComponent<GameManagerScript>().playerCount;
+		}
 		if(katrina)
 		{
 			gameObject.transform.position = new Vector3(gameObject.GetComponentInParent<Transform>().transform.position.x,
@@ -78,7 +85,7 @@ public class DestroyerScript : MonoBehaviour {
 				gameObject.GetComponentInParent<CameraControl> ().someoneDied = true;
 				Destroy (col.gameObject);
 				//Debug.Log ("WORKING???");
-				manager.GetComponent<GameManagerScript> ().playerCount--;
+				titleManager.GetComponent<TitleManagerScript> ().playerCount--;
 				numPlayers--;
 				// Debug.Log(numPlayers);
 				if (numPlayers == 1)

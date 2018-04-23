@@ -22,7 +22,7 @@ public class GameManagerScript : MonoBehaviour {
 	public List<GameObject> players = new List<GameObject>();
 
 	public bool isReady = true;
-	bool starting = false;
+	public bool starting = false;
 	bool started = false;
 	public bool startLine = false;
 	public int playersStarting = 0;
@@ -32,72 +32,34 @@ public class GameManagerScript : MonoBehaviour {
 	void Start () {
 		DontDestroyOnLoad (this.gameObject);
 		titleManager = GameObject.Find ("TitleManager");
-		if (titleManager) {
-			playerCount = titleManager.GetComponent<TitleManagerScript> ().playerCount;
-			Destroy (titleManager);
-		}
-		if(playerCount == 1)
-		{
-			player1.SetActive (true);
-			player2.SetActive (false);
-			player3.SetActive (false);
-			player4.SetActive (false);
-			p1.gameObject.SetActive (true);
-			p2.gameObject.SetActive (false);
-			p3.gameObject.SetActive (false);
-			p4.gameObject.SetActive (false);
-			players.Add (player1);
-		}
-		if(playerCount == 2)
-		{
-			player1.SetActive (true);
-			player2.SetActive (true);
-			player3.SetActive (false);
-			player4.SetActive (false);
-			p1.gameObject.SetActive (true);
-			p2.gameObject.SetActive (true);
-			p3.gameObject.SetActive (false);
-			p4.gameObject.SetActive (false);
-			players.Add (player1);
-			players.Add (player2);
-		}
-		if(playerCount == 3)
-		{
-			player1.SetActive (true);
-			player2.SetActive (true);
-			player3.SetActive (true);
-			player4.SetActive (false);
-			p1.gameObject.SetActive (true);
-			p2.gameObject.SetActive (true);
-			p3.gameObject.SetActive (true);
-			p4.gameObject.SetActive (false);
-			players.Add (player1);
-			players.Add (player2);
-			players.Add (player3);
-		}
-		if(playerCount == 4)
-		{
-			player1.SetActive (true);
-			player2.SetActive (true);
-			player3.SetActive (true);
-			player4.SetActive (true);
-			p1.gameObject.SetActive (true);
-			p2.gameObject.SetActive (true);
-			p3.gameObject.SetActive (true);
-			p4.gameObject.SetActive (true);
-			players.Add (player1);
-			players.Add (player2);
-			players.Add (player3);
-			players.Add (player4);
-		}
+		players.Add (player1);
+		players.Add (player2);
+		players.Add (player3);
+		players.Add (player4);
 	}
 
 	void FixedUpdate()
 	{
+		if (titleManager) {
+			playerCount = titleManager.GetComponent<TitleManagerScript> ().playerCount;
+		}
 		if(startLine)
 		{
 			if (!isReady) {
-				StartCoroutine(CountDown ());
+				if (playerCount >= 2) {
+					p1.gameObject.SetActive (true);
+					p2.gameObject.SetActive (true);
+					p3.gameObject.SetActive (false);
+					p4.gameObject.SetActive (false);
+				}
+				if (playerCount >= 3) {
+					p3.gameObject.SetActive (true);
+					p4.gameObject.SetActive (false);
+				}
+				if (playerCount >= 4) {
+					p4.gameObject.SetActive (true);
+				}
+				StartCoroutine (CountDown ());
 			}
 			if (starting) {
 				readyUp.gameObject.SetActive (true);
@@ -107,6 +69,7 @@ public class GameManagerScript : MonoBehaviour {
 				go.gameObject.SetActive (true);
 				started = false;
 				StartCoroutine (CountDown2 ());
+				destroyer.GetComponent<DestroyerScript> ().startingGame = true;
 				gucci = true;
 			}
 		}

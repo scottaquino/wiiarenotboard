@@ -24,6 +24,8 @@ public class WinnerScript : MonoBehaviour {
 		else if (manager.GetComponent<GameManagerScript> ().player4Win) {
 			p4.gameObject.SetActive (true);
 		}
+		Destroy (manager);
+		Destroy (GameObject.Find ("TitleManager"));
 	}
 	
 	// Update is called once per frame
@@ -33,7 +35,7 @@ public class WinnerScript : MonoBehaviour {
 
 	public void Replay ()
 	{
-		SceneManager.LoadScene ("TitleScreen");
+		SceneManager.LoadScene ("Main");
 	}
 
 	public void Quit()
