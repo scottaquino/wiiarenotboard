@@ -19,6 +19,7 @@ public class CameraControl : MonoBehaviour {
 	float prevY = 0.0f;
 	public bool someoneDied = false;
 	public int moveCounter = 0;
+	int firstCounter = 0;
 
 	float startTime;
 	float journeyDist;
@@ -113,11 +114,18 @@ public class CameraControl : MonoBehaviour {
 		}
 		for (int i = 0; i < manager.GetComponent<GameManagerScript> ().playerCount; i++) {
 			if(players[i].GetComponent<MovementScript>().first) {
-				avgY += players[i].transform.position.y * 2.0f;
-				break;
+				firstCounter++;
+				if (firstCounter <= 1) {
+					avgY += players [i].transform.position.y * 2.0f;
+				}
 			}
 		}
-		avgY /= manager.GetComponent<GameManagerScript> ().playerCount + 2.0f;
+		if (firstCounter == 1) {
+			avgY /= manager.GetComponent<GameManagerScript> ().playerCount + 2.0f;
+		} else {
+			avgY /= manager.GetComponent<GameManagerScript> ().playerCount;
+		}
+		firstCounter = 0;
 		//Debug.Log (avgY);
 	}
 }

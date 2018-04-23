@@ -53,6 +53,8 @@ public class MovementScript : MonoBehaviour {
 	void Start () {
 		moveVector.y = -1.1f;
 		gameObject.GetComponent<CheckScript> ().SetPlayers ();
+		hasItem = false;
+		hasSpare = false;
 	}
 
 	// Update is called once per frame
@@ -174,11 +176,13 @@ public class MovementScript : MonoBehaviour {
 	{
 		for(int i = 0; i < manager.GetComponent<GameManagerScript>().playerCount; i++)
 		{
-			if (gameObject.transform.position.y <= camera.GetComponent<CameraControl> ().players [i].transform.position.y) {
-				isFirst = true;
-			} else {
-				isFirst = false;
-				return isFirst;
+			if (camera.GetComponent<CameraControl> ().players [i]) {
+				if (gameObject.transform.position.y < camera.GetComponent<CameraControl> ().players [i].transform.position.y) {
+					isFirst = true;
+				} else {
+					isFirst = false;
+					return isFirst;
+				}
 			}
 		}
 		return isFirst;
