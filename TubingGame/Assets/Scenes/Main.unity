@@ -2693,6 +2693,16 @@ Prefab:
       propertyPath: titleManager
       value: 
       objectReference: {fileID: 1414392448}
+    - target: {fileID: 61306009019621568, guid: 7810e2226328f8b40ad4ffec402f212f,
+        type: 2}
+      propertyPath: m_Offset.y
+      value: 10.803123
+      objectReference: {fileID: 0}
+    - target: {fileID: 61306009019621568, guid: 7810e2226328f8b40ad4ffec402f212f,
+        type: 2}
+      propertyPath: m_Size.y
+      value: 8.158411
+      objectReference: {fileID: 0}
     m_RemovedComponents:
     - {fileID: 82668350212842164, guid: 7810e2226328f8b40ad4ffec402f212f, type: 2}
   m_ParentPrefab: {fileID: 100100000, guid: 7810e2226328f8b40ad4ffec402f212f, type: 2}
