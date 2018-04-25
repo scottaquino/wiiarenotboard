@@ -35,8 +35,9 @@ public class BranchScript : MonoBehaviour {
 
 	void OnTriggerEnter2D(Collider2D col)
 	{
-		if (col.gameObject.tag == "Player" && !paired && !col.gameObject.GetComponent<MovementScript> ().hasItem && !col.gameObject.GetComponent<MovementScript> ().hasSpare) {
-			col.gameObject.GetComponent<MovementScript> ().hasItem = true;
+		if (col.gameObject.tag == "Player" && !paired && !col.gameObject.GetComponent<MovementScript>().hasItem && !col.gameObject.GetComponent<MovementScript>().hasSpare)
+		{
+			col.gameObject.GetComponent<MovementScript>().hasItem = true;
 			paired = true;
 			transform.SetParent (col.gameObject.transform);
 			//gameObject.transform.position = new Vector3 (0, 0, -10); //I think this was setting the position to the wrong area
