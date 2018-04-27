@@ -27,6 +27,7 @@ public class MovementScript : MonoBehaviour {
 	public GameObject character;
 
 	public GameObject manager;
+	public GameObject titleManager;
 	public GameObject camera;
 
 	public GameObject otherPlayer1;
@@ -96,10 +97,12 @@ public class MovementScript : MonoBehaviour {
 			{
 				GetComponent<Rigidbody2D> ().velocity = GetComponent<Rigidbody2D> ().velocity.normalized * maxSpeed;
 			}
+			//---------------------------------------------------------------- REMOVE THIS FUNCTION FOR NON TESTING BUILD -------------------------------------------------------------------------
 			if(player.GetAxis("Vertical") >= 0.25f && manager.GetComponent<GameManagerScript>().gucci)
 			{
 				moveVector.y = 0.2f;
 			}
+			//---------------------------------------------------------------- REMOVE THIS FUNCTION FOR NON TESTING BUILD -------------------------------------------------------------------------
 			gameObject.GetComponent<Rigidbody2D>().AddForce(moveVector * moveSpeed * firstPenalty);
 		} 
 		if (moveVector.x >= 1.0) {
@@ -118,7 +121,7 @@ public class MovementScript : MonoBehaviour {
 	void OnCollisionEnter2D(Collision2D collision)
 	{
 		Debug.Log("COLLIDING");
-		if (collision.gameObject.tag == "Player") {
+		if (collision.gameObject.tag == "Player" || collision.gameObject.tag == "Spare") {
 			StartCoroutine (Bounce (collision));
 		} else {
 			StartCoroutine (BounceObject (collision));
@@ -128,7 +131,6 @@ public class MovementScript : MonoBehaviour {
 	IEnumerator Bounce(Collision2D col)
 	{
 		Debug.Log("BOUNCING");
-		//gameObject.GetComponent<Rigidbody2D>().AddForce(-moveVector * bounce/2 * moveSpeed); //bounce math for aggressor
 		col.gameObject.GetComponent<Rigidbody2D>().AddForce(moveVector * bounce * moveSpeed); //bounce math for person getting bumped
 
 		//Take away control of movement during bounce
@@ -174,17 +176,20 @@ public class MovementScript : MonoBehaviour {
 
 	bool CheckFirst()
 	{
-		for(int i = 0; i < manager.GetComponent<GameManagerScript>().playerCount; i++)
+		for(int i = 0; i < titleManager.GetComponent<TitleManagerScript>().playerCount; i++)
 		{
 			if (camera.GetComponent<CameraControl> ().players [i]) {
-				if (gameObject.transform.position.y < camera.GetComponent<CameraControl> ().players [i].transform.position.y) {
+				if (gameObject.transform.position.y < camera.GetComponent<CameraControl> ().players [i].transform.position.y && camera.GetComponent<CameraControl> ().players [i] != gameObject) {
 					isFirst = true;
-				} else {
+				} else if(camera.GetComponent<CameraControl> ().players [i] != gameObject) {
 					isFirst = false;
 					return isFirst;
 				}
 			}
 		}
+		//if (isFirst) {
+		//	Debug.Log (playerId);
+		//}
 		return isFirst;
 	}
 

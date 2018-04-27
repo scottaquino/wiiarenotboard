@@ -306,7 +306,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1003350792127888}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 139.11267, y: -50.943466, z: 0}
+  m_LocalPosition: {x: 0.72027826, y: -23.593903, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 4986024031492650}
@@ -645,6 +645,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   canSpawn: 00000001
+  isLeft: 0
 --- !u!114 &114200110465665128
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -657,6 +658,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   canSpawn: 00000001
+  isLeft: 1
 --- !u!114 &114311590670571524
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -669,6 +671,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   canSpawn: 01010100
+  isLeft: 0
 --- !u!114 &114318204603553210
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -681,6 +684,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   canSpawn: 01010100
+  isLeft: 0
 --- !u!114 &114552413326012686
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -693,6 +697,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   canSpawn: 00000001
+  isLeft: 1
 --- !u!114 &114552808574693758
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -705,6 +710,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   canSpawn: 01010100
+  isLeft: 0
 --- !u!114 &114622100238513904
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -735,6 +741,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   canSpawn: 01010100
+  isLeft: 0
 --- !u!114 &114784745075418788
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -747,6 +754,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   canSpawn: 01010100
+  isLeft: 0
 --- !u!114 &114838811848621722
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -759,6 +767,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   canSpawn: 00000001
+  isLeft: 0
 --- !u!114 &114865759965352542
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -771,6 +780,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   canSpawn: 01010100
+  isLeft: 0
 --- !u!212 &212094360965673984
 SpriteRenderer:
   m_ObjectHideFlags: 1

@@ -251,7 +251,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1762625289198994}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 130.46509, y: -51.949562, z: 0}
+  m_LocalPosition: {x: -10.049719, y: -33.915775, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 4794633724857774}
@@ -626,6 +626,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   canSpawn: 01010100
+  isLeft: 0
 --- !u!114 &114326369674996076
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -638,6 +639,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   canSpawn: 00000001
+  isLeft: 1
 --- !u!114 &114395751735180718
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -650,6 +652,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   canSpawn: 00000001
+  isLeft: 0
 --- !u!114 &114453412836316160
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -662,6 +665,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   canSpawn: 01010100
+  isLeft: 0
 --- !u!114 &114461087263101376
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -674,6 +678,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   canSpawn: 01010100
+  isLeft: 0
 --- !u!114 &114529765853403344
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -686,6 +691,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   canSpawn: 01010100
+  isLeft: 0
 --- !u!114 &114686325960281948
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -698,6 +704,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   canSpawn: 00000001
+  isLeft: 0
 --- !u!114 &114904928006795484
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -728,6 +735,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   canSpawn: 00000001
+  isLeft: 1
 --- !u!114 &114973102472871930
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -740,6 +748,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   canSpawn: 01010100
+  isLeft: 0
 --- !u!114 &114999335480738926
 MonoBehaviour:
   m_ObjectHideFlags: 1

@@ -7,6 +7,7 @@ public class ObstacleSpawn : MonoBehaviour {
 	List<GameObject> obstacles;
 	[Header("Rock, Whirlpool, Gator, Log Spawn")]
 	public List<bool> canSpawn;
+	public bool isLeft;
 
 	int time;
 	float obstacleChance = .2f;
@@ -16,6 +17,9 @@ public class ObstacleSpawn : MonoBehaviour {
 	int numItemsSpawned = 0;
 	float obsToSpawn;
 	float itemsToSpawn;
+
+	GameObject tempSpawn;
+	Quaternion target;
 
 	// Use this for initialization
 	void Start () {
@@ -55,7 +59,14 @@ public class ObstacleSpawn : MonoBehaviour {
 	{
 		for (int i = 0; i < obstacles.Count; i++) {
 			if(obstacles[i] == Resources.Load("Log") as GameObject){
-				Instantiate (obstacles [i], transform.position, Quaternion.identity);
+				tempSpawn = Instantiate (obstacles [i], transform.position, Quaternion.identity);
+				if (isLeft) {
+					tempSpawn.gameObject.transform.position = new Vector3 (tempSpawn.gameObject.transform.position.x + 1.0f, tempSpawn.gameObject.transform.position.y);
+				} else {
+					target = Quaternion.Euler (tempSpawn.gameObject.transform.rotation.x, tempSpawn.gameObject.transform.rotation.y + 180f, tempSpawn.gameObject.transform.rotation.z);
+					tempSpawn.gameObject.transform.position = new Vector3 (tempSpawn.gameObject.transform.position.x - 1.0f, tempSpawn.gameObject.transform.position.y);
+					tempSpawn.gameObject.transform.rotation = Quaternion.Slerp (tempSpawn.gameObject.transform.rotation, target, 1f);
+				}
 				return;
 			}
 		}

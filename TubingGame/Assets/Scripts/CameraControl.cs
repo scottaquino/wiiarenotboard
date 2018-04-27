@@ -12,6 +12,7 @@ public class CameraControl : MonoBehaviour {
 	public float maxSpeed = 3.0f;
 	Vector3 moveDirection;
 	public GameObject manager;
+	public GameObject titleManager;
 	public GameObject destroyer;
 	public float avgX = 0.0f;
 	public float avgY = 0.0f;
@@ -27,6 +28,12 @@ public class CameraControl : MonoBehaviour {
 	float distCovered;
 	float fracJourney;
 	Transform startPos;
+	public GameObject water;
+	public GameObject water1;
+	public GameObject water2;
+	public GameObject waterKill;
+	public GameObject waterRespawn;
+	public float flowSpeed;
 
 	public List<GameObject> players = new List<GameObject>();
 
@@ -61,6 +68,18 @@ public class CameraControl : MonoBehaviour {
 		if (!destroyer.GetComponent<DestroyerScript> ().katrina) {
 			destroyer.transform.position = transform.position;
 		}
+			water.gameObject.transform.position = new Vector3(gameObject.transform.position.x, water.gameObject.transform.position.y - flowSpeed);
+			water1.gameObject.transform.position = new Vector3(gameObject.transform.position.x, water1.gameObject.transform.position.y - flowSpeed);
+			water2.gameObject.transform.position = new Vector3(gameObject.transform.position.x, water2.gameObject.transform.position.y - flowSpeed);
+			if (water.gameObject.transform.position.y <= waterKill.gameObject.transform.transform.position.y) {
+				water.gameObject.transform.position = new Vector3 (waterRespawn.transform.position.x, waterRespawn.transform.position.y);
+			}
+			if (water1.gameObject.transform.position.y <= waterKill.gameObject.transform.transform.position.y) {
+				water1.gameObject.transform.position = new Vector3 (waterRespawn.transform.position.x, waterRespawn.transform.position.y);
+			}
+			if (water2.gameObject.transform.position.y <= waterKill.gameObject.transform.transform.position.y) {
+				water2.gameObject.transform.position = new Vector3 (waterRespawn.transform.position.x, waterRespawn.transform.position.y);
+			}
 		}
 	}
 
@@ -99,6 +118,7 @@ public class CameraControl : MonoBehaviour {
 		}
 		avgX /= manager.GetComponent<GameManagerScript> ().playerCount;
 		//Debug.Log (avgX);
+
 		if(manager.GetComponent<GameManagerScript>().playerCount == 2) {
 			avgY += players[0].transform.position.y;
 			avgY += players[1].transform.position.y;
@@ -112,20 +132,8 @@ public class CameraControl : MonoBehaviour {
 			avgY += players[2].transform.position.y;
 			avgY += players[3].transform.position.y;
 		}
-		for (int i = 0; i < manager.GetComponent<GameManagerScript> ().playerCount; i++) {
-			if(players[i].GetComponent<MovementScript>().first) {
-				firstCounter++;
-				if (firstCounter <= 1) {
-					avgY += players [i].transform.position.y * 2.0f;
-				}
-			}
-		}
-		if (firstCounter == 1) {
-			avgY /= manager.GetComponent<GameManagerScript> ().playerCount + 2.0f;
-		} else {
-			avgY /= manager.GetComponent<GameManagerScript> ().playerCount;
-		}
-		firstCounter = 0;
+			
+		avgY /= manager.GetComponent<GameManagerScript> ().playerCount;
 		//Debug.Log (avgY);
 	}
 }

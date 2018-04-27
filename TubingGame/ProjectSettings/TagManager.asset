@@ -7,6 +7,7 @@ TagManager:
   - River
   - Obstacle_Trigger
   - Obstacle
+  - Spare
   layers:
   - Default
   - TransparentFX

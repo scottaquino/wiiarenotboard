@@ -12,6 +12,8 @@ public class DestroyerScript : MonoBehaviour {
 	public GameObject manager;
 	public GameObject titleManager;
 	public bool startingGame = false;
+	public float shakeDuration;
+	public GameObject limitStorm;
 
 	// Use this for initialization
 	void Start () {
@@ -27,7 +29,7 @@ public class DestroyerScript : MonoBehaviour {
 			startingGame = false;
 			numPlayers = manager.GetComponent<GameManagerScript>().playerCount;
 		}
-		if(katrina)
+		if(katrina && gameObject.GetComponentInParent<Transform>().transform.position.y > limitStorm.GetComponent<Transform>().transform.position.y)
 		{
 			gameObject.transform.position = new Vector3(gameObject.GetComponentInParent<Transform>().transform.position.x,
 				gameObject.GetComponentInParent<Transform>().transform.position.y - stormSpeed);
@@ -82,11 +84,12 @@ public class DestroyerScript : MonoBehaviour {
 					}
 					manager.GetComponent<GameManagerScript> ().p4.gameObject.SetActive (false);
 				}
-				gameObject.GetComponentInParent<CameraControl> ().someoneDied = true;
-				Destroy (col.gameObject);
-				//Debug.Log ("WORKING???");
 				titleManager.GetComponent<TitleManagerScript> ().playerCount--;
 				numPlayers--;
+				gameObject.GetComponentInParent<CameraControl> ().someoneDied = true;
+				StartCoroutine (Shake());
+				Destroy (col.gameObject);
+				//Debug.Log ("WORKING???");
 				// Debug.Log(numPlayers);
 				if (numPlayers == 1)
 					EndGame ();
@@ -104,6 +107,13 @@ public class DestroyerScript : MonoBehaviour {
 	void EndGame()
 	{
 		SceneManager.LoadScene ("YouWin");
+	}
+
+	IEnumerator Shake()
+	{
+		gameObject.GetComponentInParent<ShakeScript> ().shake = true;
+		yield return new WaitForSeconds (shakeDuration);
+		gameObject.GetComponentInParent<ShakeScript> ().shake = false;
 	}
 
 	IEnumerator CatchUp()
